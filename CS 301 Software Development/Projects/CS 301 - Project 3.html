@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>CS 301 - Project 1</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1038.36">
+  <style type="text/css">
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Times}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times; min-height: 18.0px}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times}
+    span.Apple-tab-span {white-space:pre}
+    ul.ul1 {list-style-type: disc}
+    ul.ul2 {list-style-type: circle}
+  </style>
+</head>
+<body>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times"><b>Project 3: Implementing a robot that escapes from the maze</b></h2>
+<p class="p2"><br></p>
+<p class="p3">To Deliver: release 4.0<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></p>
+<p class="p3">To Download: <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>/home/scratch/kemper/Robot.java and /home/scratch/kemper/RobotDriver.java</p>
+<p class="p3">Due date for submission:   <span class="Apple-tab-span">	</span>March 1, at noon (12.00 PM)</p>
+<p class="p3">Drop out date:                    <span class="Apple-tab-span">	</span>March 13, at noon (12.00 PM)</p>
+<p class="p2"><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times"><b>Motivation</b></h3>
+<p class="p3">There are many different ways to escape from a maze.<span class="Apple-converted-space">  </span>In this project, we want to implement such algorithms for a robot whose functionality is specified by a given Robot.java interface.</p>
+<p class="p3">The interface follows what a Lego robot may provide for as sensors to recognize distant objects (here walls) and the ability to move forward, backward and to turn on the spot.<span class="Apple-converted-space"> </span></p>
+<p class="p3">We also want to compare algorithms in terms of their energy efficiency to operate the robot. So there is a some energy consumption being involved in any movement and sensor operation and the robot draws energy from its battery on its journey.<span class="Apple-converted-space"> </span></p>
+<p class="p3">Operating the robot needs care, hitting a wall will damage it and will cause an emergency stop.<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p3">We want to consider four different Robot driver algorithms:</p>
+<p class="p2"><br></p>
+<ul class="ul1">
+  <li class="li3"><b>Gambler</b>: the gambler is a simple random search algorithm with no memory. Once started it looks moves a step, checks its options by asking its available distance sensors, randomly picks a direction, moves a stop and so on.<span class="Apple-converted-space"> </span></li>
+  <li class="li3"><b>CuriousGambler</b>: the curious gambler has a bias to select an adjacent cell that was not visited as often as other (curious to explore new territories). So it needs a memory to count how often it has visited particular cells. Hint: a hashmap is a great data structure for this, but there are lots of choices that all work (check for Collections).<span class="Apple-converted-space"> </span></li>
+  <li class="li3"><b>WallFollower</b>: the wall follower is a classic solution technique. The robot needs a distance sensor at the front and at one side (here: pick left) to perform. It follows the wall on its left hand side.<span class="Apple-converted-space">  </span>Warning: Think how the robot's limitations in recognizing its environment may have an impact on properties of this classic solution algorithm (termination, correctness).</li>
+  <li class="li3"><b>Wizard</b>: as there is little magic in algorithms, the wizard is in fact a cheater who knows the distance matrix and uses it to find the exit. The wizard is intended to work as a baseline algorithm to see who the most efficient algorithm can perform in terms of energy consumption and path length. It is also a good candidate for testing a maze, a robot implementation …</li>
+</ul>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p3">We also need to adjust the maze application class to provide us with a user interface such that we can select a robot driver algorithm (plus one option for a manual operation) plus a choice for the maze generation algorithm (Falstad's original algorithm and Prim's algorithm).<span class="Apple-converted-space"> </span></p>
+<p class="p3"><b>Hint</b>: check for <a href="http://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html">Combo Boxes</a>. The RobotDriver will drive the graphics (MapDrawer and FirstPersonDrawer) without being aware of this. The robot interface implementation needs to take care of this by operating on top of the Maze class.</p>
+<p class="p2"><br></p>
+<p class="p3">The only <b>robot configuration</b> we will consider at this point is the following:</p>
+<ul class="ul1">
+  <li class="li3">It has 2 distance sensors, one in forward and one in left direction.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">The robot can move forward and backwards.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">The robot can turn.</li>
+  <li class="li3">The initial battery level is 2500.</li>
+  <li class="li3">The energy costs are:<span class="Apple-converted-space"> </span></li>
+  <ul class="ul2">
+    <li class="li3">Distance sensing in one direction: 1</li>
+    <li class="li3">Rotating by 90 degrees (left or right): 3</li>
+    <li class="li3">Moving forward or backward one cell: 5</li>
+  </ul>
+</ul>
+<p class="p2"><br></p>
+<p class="p3"><b>What to learn from this project:</b></p>
+<p class="p3">- Experience in test-driven design and limitations of testing when it comes to randomized algorithms and graphics.<span class="Apple-converted-space"> </span></p>
+<p class="p3">- Using inheritance to share code across classes that solve same problems in different ways</p>
+<p class="p3">- Implementing different versions of algorithms in an object oriented manner</p>
+<p class="p3">- Learn to work with exceptions</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p5"><b>Design decision</b></p>
+<p class="p2"><br></p>
+<p class="p3">To retain a reasonably uniform design, I would like to fix the following naming conventions for classes:</p>
+<p class="p2"><br></p>
+<p class="p3">Classes that implement the RobotDriver interface for the different algorithms are named: Gambler.java, CuriousGambler.java, WallFollower.java, Wizard.java</p>
+<p class="p2"><br></p>
+<p class="p3">Classes that implement test cases for each class have the class name followed by suffix Test, e.g. GamblerTest.java for the Gambler.java class.</p>
+<p class="p2"><br></p>
+<p class="p3">The class that implements the Robot interface is named BasicRobot.java. Note that we will only consider a default robot configuration with 2 distance sensors, one in forward and one in left direction. However, it may be straightforward to have a class that is configurable to have more/less/other distance sensors. Provide the class with at least one constructor that has no parameters and creates a robot with the default configuration we consider.</p>
+<p class="p2"><br></p>
+<p class="p6"><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times"><b>To do list:</b></h3>
+<ul class="ul1">
+  <li class="li3">Perform a class design with CRC cards.<span class="Apple-converted-space"> </span></li>
+  <ul class="ul2">
+    <li class="li3">Note: there are many possible design solutions! There are good and bad choices. The problem does have many reasonable solutions. Aside: for the RobotDriver consider the use of an abstract driver following the Template Pattern. <span class="Apple-converted-space"> </span></li>
+    <li class="li3">Put your crc design in writing, simple list each class, its responsibilities and collaborators. Email this to Han Li.</li>
+  </ul>
+  <li class="li3">In case you have mixed source code and test code, I would like to ask you to change this. In your Eclipse project, keep source code and test code separate. Use a separate source directory src for source code, another source directory test for test code. Both should then have the same package structure, here: a falstad package.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">Implement BasicRobot.java and BasicRobotTest.java<span class="Apple-converted-space">  </span>classes</li>
+  <ul class="ul2">
+    <li class="li3">You can use as many additional other classes, methods as you like. You can change the existing code base to make the integration of BasicRobot.java easier.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">WARNING: perform the following sanity test: assign the starting location (0,0) to a maze when it is built in MazeBuilder, make the rotate method print its directions before and after the rotation, print for the initial location (0,0) in which direction potential walls on top/bottom/right/left are and compare this with the graphics on display in map mode. You will recognize an inconsistency in the interpretation of directions for rotate and the CW_TOP, CW_BOT directions used in MazeBuilder. BEFORE you make changes to the existing code, think why it can work the way it is and think twice before you want to stir things up …<span class="Apple-converted-space"> </span></li>
+    <li class="li3">For testing: ask yourself what a correct robot implementation must be able to support.<span class="Apple-converted-space"> </span></li>
+  </ul>
+  <li class="li3">Implement the Robot Driver algorithms.<span class="Apple-converted-space"> </span></li>
+  <ul class="ul2">
+    <li class="li3">You can use as many additional other classes, methods as you like.<span class="Apple-converted-space"> <span class="Apple-tab-span">	</span></span></li>
+    <li class="li3">For testing: ask yourself what a correct robot driver implementation distinguishes from a faulty one.<span class="Apple-converted-space"> </span></li>
+  </ul>
+  <li class="li3">Update your subversion repository whenever you made progress and got a particular feature or method going.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">When you have finished the project assignment, create a tag with a Release 4.0 before the drop out date (due date is recommended for your own sanity). Include your junit test cases in your release. Keep source code and test code in separate directories (src and test).<span class="Apple-converted-space"> </span></li>
+  <li class="li3">Send CRC design description by email to Han Li hli06@email.wm.edu<span class="Apple-converted-space"> </span></li>
+  <li class="li3">Grading</li>
+  <ul class="ul2">
+    <li class="li3">You will receive points for the CRC design description.</li>
+    <li class="li3">You will receive points for a subversion release 4.0 that includes source code and test code and that can be checked out by the grader.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points for implementing the robot and the four robot driver classes. Code is expected to have comments, at least a statement per method (using the javadoc format with /** …. */ .<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points for implementing test cases. Test cases are expected to come with a comment that specifies what is tested, what is the correct behavior and (if not obvious) why that behavior is correct.</li>
+    <li class="li3">You will receive points if test cases perform and your code passes our own tests. We will run and evaluate your tests as well as some additional ones of our own that will test BasicRobot.java and the Robot Driver classes based on the interface specification. We will evaluate your tests to see if they perform a rigid test and if they achieve a reasonable coverage on the tested classes.</li>
+    <li class="li3">You will receive points if the overall MazeApplication runs, comes with a menu to start each of the four algorithms or a manual operation and if the algorithms in fact operate correctly on a maze that is displayed in the first person perspective as well as the map perspective with the current location and the suggest path to the exit (based on the distance matrix).<span class="Apple-converted-space"> </span></li>
+  </ul>
+</ul>
+</body>
+</html>

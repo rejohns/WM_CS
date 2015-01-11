@@ -1,0 +1,246 @@
+\documentclass[11pt]{article} % 
+\usepackage[pdftex]{graphicx}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{psfrag}
+\usepackage{pgf}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\tab}{\;\;\;\;\;}
+\newcommand{\inv}{^{-1}}
+
+\begin{document}
+
+\hfill Robert Johns
+
+\hfill September 11, 2013
+
+\begin{center}
+{\Large CSCI 426: Simulation}\\{\large Homework 1}
+\end{center}
+
+\begin{enumerate}
+
+%1
+\item (Lecture 1: 1.1.2) If you were told that "this discrete-event simulation model has been verified but it is not known whether the model is valid," how would you interpret that statement?
+
+{\bf Solution:} Since the model has been verified, we know that it is consistent with the specification model; in other words, the computational model has been implemented correctly.  However, since we don't know if the model is valid, we don't know if the computational model, though implemented correctly, accurately reflects reality.
+
+%2
+\setcounter{enumi}{1}
+\item (Lecture 2: 1.2.3) \begin{enumerate}
+
+%2a
+\item Modify program \texttt{ssq1.c} by adding the capability to compute the maximum delay, the number of jobs in the service node at a specified time (known at compile time) and the proportion of jobs delayed.
+
+{\bf Solution:} I've printed off and attached the modified code at the end of the homework.  I'll emphasize changes through inline comments above and below new code.
+
+%2b
+\item What was the maximum delay experienced?
+
+{\bf Solution:} The maximum delay was 118.76 seconds.
+
+%2c
+\item How many jobs were in the service node at $t = 400$, and how does the computation of the number relate to the proof of Theorem 1.2.1?
+
+{\bf Solution:} There are seven jobs in the service node at time $t=400$.  This result was calculated by using the indicator function $\psi_i(t)$, which indicates whether or not job $i$ is in the service node at time $t$, which is employed in the proof of Theorem 1.2.1.
+
+%2d
+\item What proportion of jobs were delayed, and how does this proportion relate to the utilization?
+
+{\bf Solution:} We see that 72.3 percent of jobs were delayed.  I'm not sure what the problem means by "how does this proportion relate to the utilization", but I'll guess it's asking how the fact that the queue is single-server FIFO affects the proportion delayed.  If the queue were SJF (shortest job first), the only jobs delayed would be the jobs that took the longest to process, because they would go last and the shortest jobs would be completed before more jobs came into the service node.  If there were more than one server for the queue, that would also lower the percentage delayed because more than one job could be processed at once.
+
+\end{enumerate}
+
+\newpage
+
+%3
+\setcounter{enumi}{2}
+\item (Lecture 3: 1.3.4) \begin{enumerate}
+
+\item Construct a table or figure similar to Figure 1.3.7, but for $S=100$ and $S=60.$
+
+{\bf Solution:} 
+
+For $S = 100$:
+
+$\begin{array}{|c|c|c|c|c|}\hline
+s & setup\;cost &shortage\;cost &holding\;cost & dependent\;cost\\\hline\hline
+1 & 260.00 & 751.87 & 1104.98 & 2116.84\\\hline
+2 & 260.00 & 771.90 & 1111.19 & 2143.09\\\hline
+3 & 260.00 & 709.71 & 1118.97 & 2088.69\\\hline
+4 & 260.00 & 709.71 & 1118.97 & 2088.69\\\hline
+5 & 270.00 & 629.70 & 1140.36 & 2040.07\\\hline
+6 & 270.00 & 629.70 & 1140.36 & 2040.07\\\hline
+7 & 270.00 & 635.42 & 1149.07 & 2054.49\\\hline
+8 & 270.00 & 524.36 & 1165.10 & 1959.46\\\hline
+9 & 280.00 & 448.22 & 1165.38 & 1893.61\\\hline
+10 & 280.00 & 346.94 & 1189.02 & 1815.95\\\hline
+11 & 290.00 & 172.75 & 1221.79 & 1684.55\\\hline
+12 & 290.00 & 179.89 & 1225.30 & 1695.19\\\hline
+13 & 290.00 & 174.39 & 1231.35 & 1695.74\\\hline
+14 & 290.00 & 174.39 & 1231.35 & 1695.74\\\hline
+15 & 300.00 & 121.00 & 1272.95 & 1693.95\\\hline
+16 & 310.00 &  58.70 & 1323.22 & 1691.92\\\hline
+17 & 310.00 &  58.70 & 1323.22 & 1691.92\\\hline
+18 & 310.00 &  72.55 & 1319.97 & 1702.52\\\hline
+19 & 320.00 &  28.47 & 1327.89 & 1676.36\\\hline
+20 & 320.00 &  27.59 & 1327.11 & 1674.70\\\hline
+21 & 330.00 &  37.38 & 1386.21 & 1753.59\\\hline
+22 & 330.00 &  13.88 & 1369.87 & 1713.75\\\hline
+23 & 330.00 &   1.04 & 1371.41 & 1702.45\\\hline
+24 & 330.00 &   1.04 & 1371.41 & 1702.45\\\hline
+25 & 340.00 &   0.09 & 1404.13 & 1744.22\\\hline
+26 & 340.00 &   0.09 & 1404.13 & 1744.22\\\hline
+27 & 340.00 &   0.09 & 1404.13 & 1744.22\\\hline
+28 & 340.00 &   0.09 & 1404.13 & 1744.22\\\hline
+29 & 340.00 &   0.09 & 1404.13 & 1744.22\\\hline
+30 & 340.00 &   0.09 & 1404.13 & 1744.22\\\hline
+31 & 340.00 &   0.09 & 1404.13 & 1744.22\\\hline
+32 & 340.00 &   0.09 & 1404.13 & 1744.22\\\hline
+33 & 340.00 &   4.76 & 1417.29 & 1762.05\\\hline
+34 & 350.00 &   4.76 & 1440.79 & 1795.55\\\hline
+35 & 350.00 &   4.76 & 1443.54 & 1798.30\\\hline
+36 & 360.00 &   4.67 & 1484.79 & 1849.46\\\hline
+37 & 360.00 &   4.67 & 1484.79 & 1849.46\\\hline
+38 & 370.00 &   4.67 & 1509.29 & 1883.96\\\hline
+39 & 390.00 &   4.67 & 1548.29 & 1942.96\\\hline
+40 & 390.00 &   4.67 & 1554.04 & 1948.71\\\hline
+\end{array}$
+
+\newpage
+For $S = 60$:
+
+$\begin{array}{|c|c|c|c|c|}\hline
+s & setup\;cost &shortage\;cost &holding\;cost & dependent\;cost\\\hline\hline
+1 & 400.00 & 1453.86 & 619.05 & 2472.91\\\hline
+2 & 410.00 & 1170.89 & 632.44 & 2213.33\\\hline
+3 & 420.00 & 1004.68 & 644.01 & 2068.69\\\hline
+4 & 430.00 & 862.54 & 658.43 & 1950.97\\\hline
+5 & 440.00 & 671.38 & 667.85 & 1779.24\\\hline
+6 & 450.00 & 539.25 & 685.88 & 1675.13\\\hline
+7 & 450.00 & 469.29 & 693.39 & 1612.67\\\hline
+8 & 450.00 & 463.25 & 694.67 & 1607.92\\\hline
+9 & 460.00 & 361.77 & 707.55 & 1529.31\\\hline
+10 & 470.00 & 306.31 & 718.81 & 1495.12\\\hline
+11 & 480.00 & 220.87 & 732.51 & 1433.38\\\hline
+12 & 480.00 & 220.87 & 732.51 & 1433.38\\\hline
+13 & 490.00 & 155.91 & 748.19 & 1394.10\\\hline
+14 & 500.00 & 112.11 & 766.13 & 1378.23\\\hline
+15 & 500.00 & 112.11 & 766.13 & 1378.23\\\hline
+16 & 500.00 & 116.31 & 764.03 & 1380.33\\\hline
+17 & 500.00 & 128.03 & 761.70 & 1389.72\\\hline
+18 & 510.00 &  92.37 & 780.67 & 1383.05\\\hline
+19 & 510.00 &  92.37 & 780.67 & 1383.05\\\hline
+20 & 510.00 &  92.37 & 780.67 & 1383.05\\\hline
+21 & 510.00 &  92.37 & 780.67 & 1383.05\\\hline
+22 & 510.00 &  92.37 & 780.67 & 1383.05\\\hline
+23 & 520.00 &  74.89 & 789.05 & 1383.94\\\hline
+24 & 530.00 &  31.99 & 796.77 & 1358.76\\\hline
+25 & 530.00 &  31.99 & 796.77 & 1358.76\\\hline
+26 & 540.00 &  28.12 & 814.38 & 1382.50\\\hline
+27 & 550.00 &  24.84 & 828.51 & 1403.35\\\hline
+28 & 570.00 &  15.55 & 843.93 & 1429.48\\\hline
+29 & 570.00 &  16.47 & 846.96 & 1433.44\\\hline
+30 & 590.00 &  17.29 & 869.24 & 1476.54\\\hline
+31 & 640.00 &  14.43 & 905.39 & 1559.82\\\hline
+32 & 710.00 &   8.56 & 955.93 & 1674.50\\\hline
+33 & 720.00 &   8.56 & 965.68 & 1694.25\\\hline
+34 & 750.00 &   6.26 & 986.35 & 1742.61\\\hline
+35 & 830.00 &   0.83 & 1037.65 & 1868.48\\\hline
+36 & 870.00 &   0.00 & 1062.62 & 1932.62\\\hline
+37 & 900.00 &   0.00 & 1081.62 & 1981.62\\\hline
+38 & 920.00 &   0.00 & 1093.12 & 2013.12\\\hline
+39 & 950.00 &   0.00 & 1109.88 & 2059.88\\\hline
+40 & 970.00 &   0.00 & 1120.38 & 2090.38\\\hline
+\end{array}$
+
+\newpage
+
+\item How does the minimum cost value of $s$ seem to depend on $S$?
+
+{\bf Solution:} When $S = 60$ we have a minimum dependent cost is 1358.76 (at $s = 24$), while at $S = 80$ (as in the book example), the minimum dependent cost is 1549.29 (at $s = 22$), and if $S=100$ the minimum dependent cost is 1674.70 (at $s = 20$).  So it appears that as $S$ decreases, so does the minimum dependent cost, and the value of $s$ that produces the minimum cost decreases with $S$.  However, a cursory examination for every integer value of $S$ from 60 to 100 reveals that only the first correlation (between $S$ and the optimal dependent cost) is the case; the correlation between $S$ and $s$ is less simplistic.  The following table demonstrates:
+
+$\begin{array}{|c|c|c|}\hline
+S & optimal\;s & optimal\;dependent\;cost\\\hline\hline
+60 & 24 & 1358.76\\\hline
+61 & 25 & 1371.39\\\hline
+62 & 16 & 1386.64\\\hline
+63 & 16 & 1394.76\\\hline
+64 & 17 & 1402.94\\\hline
+65 & 18 & 1413.71\\\hline
+66 & 19 & 1426.62\\\hline
+67 & 18 & 1437.17\\\hline
+68 & 17 & 1447.39\\\hline
+69 & 18 & 1453.67\\\hline
+70 & 18 & 1461.80\\\hline
+71 & 19 & 1468.78\\\hline
+72 & 20 & 1478.83\\\hline
+73 & 21 & 1491.60\\\hline
+74 & 19 & 1506.37\\\hline
+75 & 20 & 1516.34\\\hline
+76 & 18 & 1527.93\\\hline
+77 & 19 & 1527.80\\\hline
+78 & 20 & 1531.46\\\hline
+79 & 21 & 1538.67\\\hline
+\end{array}\;
+\begin{array}{|c|c|c|}\hline
+S & optimal\;s & optimal\;dependent\;cost\\\hline\hline
+80 & 22 & 1549.29\\\hline
+81 & 23 & 1562.88\\\hline
+82 & 20 & 1565.19\\\hline
+83 & 8 & 1543.46\\\hline
+84 & 9 & 1526.58\\\hline
+85 & 10 & 1515.29\\\hline
+86 & 11 & 1509.29\\\hline
+87 & 12 & 1508.19\\\hline
+88 & 13 & 1511.68\\\hline
+89 & 12 & 1515.59\\\hline
+90 & 13 & 1522.45\\\hline
+91 & 14 & 1532.44\\\hline
+92 & 15 & 1545.14\\\hline
+93 & 16 & 1560.06\\\hline
+94 & 17 & 1576.71\\\hline
+95 & 18 & 1594.85\\\hline
+96 & 19 & 1614.37\\\hline
+97 & 17 & 1629.21\\\hline
+98 & 18 & 1642.66\\\hline
+99 & 19 & 1657.87\\\hline
+100 & 20 & 1674.70\\\hline
+\end{array}$
+
+So we see that the optimal $s$ varies quite a bit as $S$ increases, as the following chart demonstrates:
+
+ \begin{tikzpicture}[scale = 0.15]
+
+
+ \draw[latex-latex, thin, draw=gray] (60,0)--(100,0) node [right] {$S$};
+ \draw[latex-latex, thin, draw=gray] (60,0)--(60,30) node [above] {$s$};
+
+\foreach \Point in {(60, 24), (61, 25), (62, 16), (63, 16), (64, 17), (65, 18), (66, 19), (67, 18), (68, 17), (69, 18), (70, 18), (71, 19), (72, 20), (73, 21), (74, 19), (75, 20), (76, 18), (77, 19), (78, 20), (79, 21), (80, 22), (81, 23), (82, 20), (83, 8), (84, 9), (85, 10), (86, 11), (87, 12), (88, 13), (89, 12), (90, 13), (91, 14), (92, 15), (93, 16), (94, 17), (95, 18), (96, 19), (97, 17), (98, 18), (99, 19), (100, 20)}{
+    \node at \Point {\textbullet};
+}
+
+\end{tikzpicture} 
+
+So there's a general increase until $S = 83$, and then a significant drop-off, followed by another generally increasing trend.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

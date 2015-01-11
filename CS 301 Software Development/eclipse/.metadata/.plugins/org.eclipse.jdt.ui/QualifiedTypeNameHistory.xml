@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="falstad.Cells"/>
+<fullyQualifiedTypeName name="android.graphics.Paint"/>
+<fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="android.graphics.Rect"/>
+<fullyQualifiedTypeName name="edu.wm.cs.cs301.UI.R.id"/>
+<fullyQualifiedTypeName name="falstad.BasicRobot"/>
+<fullyQualifiedTypeName name="falstad.RobotDriver"/>
+<fullyQualifiedTypeName name="falstad.WallFollower"/>
+<fullyQualifiedTypeName name="falstad.Gambler"/>
+<fullyQualifiedTypeName name="edu.wm.cs.cs301.UI.R.layout"/>
+<fullyQualifiedTypeName name="falstad.Wizard"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.util.AttributeSet"/>
+</qualifiedTypeNameHistroy>

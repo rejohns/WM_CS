@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    <TextView android:layout_width="wrap_content" 
+    		android:text="Playing the maze" 
+    		android:textAppearance="?android:attr/textAppearanceLarge" 
+    		android:layout_height="wrap_content" android:id="@+id/PlayingMaze">
+    	</TextView>
+    <TextView android:layout_width="wrap_content" 
+    		android:text="Energy remaining:" 
+    		android:textAppearance="?android:attr/textAppearanceMedium" 
+    		android:layout_height="wrap_content" 
+    		android:id="@+id/RemainingEnergy">
+    	</TextView>
+    <Button android:text="Back" 
+    		android:id="@+id/button4" 
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content">
+    	</Button>
+    <Button android:text="PRETEND YOU WON"
+    		android:id="@+id/button10" 
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content">
+    	</Button>
+</LinearLayout>

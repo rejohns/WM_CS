@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    <TextView android:layout_width="wrap_content" 
+    		android:text="Playing the maze" 
+    		android:textAppearance="?android:attr/textAppearanceLarge" 
+    		android:layout_height="wrap_content" android:id="@+id/PlayingMaze">
+    	</TextView>
+    <TextView android:layout_width="wrap_content" 
+    		android:text="Energy remaining: one bajilion" 
+    		android:textAppearance="?android:attr/textAppearanceMedium" 
+    		android:layout_height="wrap_content" 
+    		android:id="@+id/RemainingEnergy">
+    	</TextView>
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRETEND YOU WON" />
+
+    </LinearLayout>
+
+    <falstad.MazeViewer
+        	android:id="@+id/MazeViewer"
+        	android:clickable="true"
+        	android:focusable="true"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content">
+        	<requestFocus />
+        </falstad.MazeViewer>
+</LinearLayout>

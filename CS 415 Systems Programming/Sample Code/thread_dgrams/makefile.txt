@@ -1,0 +1,16 @@
+CC=gcc
+CFLAGS=-g -Wall
+THREADFLAGS=-D_REENTRANT
+THREADLIBS=-lpthread
+
+
+all: thread_recv_udp send_udp
+
+thread_recv_udp: thread_recv_udp.c
+	$(CC) $(CFLAGS) $(THREADFLAGS) -o thread_recv_udp thread_recv_udp.c $(THREADLIBS)
+
+send_udp: send_udp.c
+	$(CC) $(CFLAGS) -o send_udp send_udp.c
+
+clean:
+	rm -f core.* thread_recv_udp send_udp

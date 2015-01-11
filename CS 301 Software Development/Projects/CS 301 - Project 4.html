@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>CS 301 - Project 1</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1038.36">
+  <style type="text/css">
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times; min-height: 18.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Times; min-height: 19.0px}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times}
+    li.li7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times; color: #0000ee}
+    span.s1 {color: #000000}
+    span.s2 {text-decoration: underline}
+    span.s3 {text-decoration: underline ; color: #0000ee}
+    span.Apple-tab-span {white-space:pre}
+    ul.ul1 {list-style-type: disc}
+    ul.ul2 {list-style-type: hyphen}
+    ul.ul3 {list-style-type: circle}
+  </style>
+</head>
+<body>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times"><b>Project 4: Android App for Maze<span class="Apple-converted-space"> </span></b></h2>
+<p class="p2"><br></p>
+<p class="p3">To Deliver: <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>release 6.0<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></p>
+<p class="p3">To Download:<span class="Apple-converted-space"> <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p3">Due date for submission:   <span class="Apple-tab-span">	</span>March 29, at noon (12.00 PM)</p>
+<p class="p3">Drop out date:                    <span class="Apple-tab-span">	</span>April 3, at noon (12.00 PM)</p>
+<p class="p2"><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 16.0px Times"><b>Motivation</b></h3>
+<p class="p3">We want to port our maze java application to Android. This requires us to redesign the user interface for a start.</p>
+<p class="p3">User interface design is very important for a successful app. It needs to be intuitive and self explanatory as you cannot expect a user being willing to ever read a manual page on how to use your wonderful software.<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p3">Porting the falstad package and making it work with the new Android user interface is subject to the next project P5. If for some reason you want to go ahead, please note that Java AWT and Swing<span class="Apple-converted-space">  </span>packages are not supported on Android. These need to be replaced and Homework 3 is supposed to prepare for this.</p>
+<p class="p2"><br></p>
+<p class="p3"><b>What to learn from this project:</b></p>
+<p class="p3">- Experience in user interface design.<span class="Apple-converted-space"> </span></p>
+<p class="p3">- Working with Activities and Intents in Android</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p5"><b>Design decision</b></p>
+<p class="p2"><br></p>
+<p class="p3">It is up to you to decide on the particular design, however as minimum requirements we will follow the 4-stage automaton implemented in Falstad's maze program:</p>
+<p class="p2"><br></p>
+<ul class="ul1">
+  <li class="li3"><b>State Title</b>:<span class="Apple-converted-space"> </span></li>
+  <ul class="ul1">
+    <li class="li3">Displays the welcome page and takes parameter settings to start with the maze generation. Parameters include:<span class="Apple-converted-space"> </span></li>
+    <ul class="ul2">
+      <li class="li3">the complexity (size) of the maze</li>
+      <li class="li3">the maze generation algorithm (Backtracking with rooms, Prim's)</li>
+      <li class="li3">the selection of one of the following ways to operate the robot: a) manual, b) Gambler, c) Curious Gambler, d) Wall Follower, e) Wizzard</li>
+      <li class="li3">the display configuration: show the whole maze from top, show the solution in the maze, show the currently visible walls</li>
+      <li class="li3">a start button</li>
+      <li class="li3">a reset button to set back all selections</li>
+    </ul>
+    <li class="li3">Possible transitions are to state Generating (via parameter settings and a start button or specific keyboard input, e.g. ok).<span class="Apple-converted-space"> </span></li>
+  </ul>
+  <li class="li3"><b>State Generating</b>:<span class="Apple-converted-space"> </span></li>
+  <ul class="ul1">
+    <li class="li3">Intermediate page that shows progress of the maze generation algorithm and informs a user.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">Once the generation algorithm is finished the display switches to State Play.</li>
+    <li class="li3">Pressing the back button will return to State Title.</li>
+  </ul>
+  <li class="li3"><b>State<span class="Apple-converted-space">  </span>Play</b>:<span class="Apple-converted-space"> </span></li>
+  <ul class="ul1">
+    <li class="li3">Displays the maze and lets the user either watch a robot exploring the maze or allows the user to manually navigate the robot through the maze.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">Displays the remaining energy</li>
+    <li class="li3">Pressing the back button returns to State Title to allow the user to choose different parameter settings and restart.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">The phone keyboard on the emulator shows a round shape in the upper part with arrow keys (so-called Dpad) in 4 directions, use these arrow keys in the manual navigation to navigate the robot.<span class="Apple-converted-space"> </span></li>
+  </ul>
+  <li class="li3"><b>State Finish</b>:<span class="Apple-converted-space"> </span></li>
+  <ul class="ul1">
+    <li class="li3">Displays the finish page and informs the user on how to restart the game.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">Shows the overall energy consumption and length of path.</li>
+    <li class="li3">Pressing the back button returns to State Title.</li>
+  </ul>
+</ul>
+<p class="p2"><br></p>
+<p class="p3">As we do not use the maze code at this point, you need to imitate the behavior of the final app at certain points:<span class="Apple-converted-space"> </span></p>
+<ul class="ul1">
+  <li class="li3">In general: have your user interface respond to any user input by a corresponding message (with a so-called toast) and a Log.v() output into the Eclipse Logcat window such that you can recognize that the bits and pieces of your app correctly communicate.</li>
+  <li class="li3">State Generating: imitate the delay in state generating and the update to the progress visualization by some simple code that does not generate a maze.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">State Play:<span class="Apple-converted-space">  </span>you may want to represent the graphics part for the maze in your layout by a simple button that when it bis clicked, the display moves on to state Finish. Also prepare for a user interface in state Play that allows a user to navigate the robot.<span class="Apple-converted-space">  </span>Check if buttons for right, left, top, bottom are pressed. <span class="Apple-converted-space"> </span></li>
+</ul>
+<p class="p2"><br></p>
+<p class="p3">To retain a reasonably uniform design, I would like to fix the following naming conventions for classes:</p>
+<p class="p2"><br></p>
+<p class="p3">Call your new Android project AMaze and use a path edu.wm.cs.cs301 and create two packages UI for user interface and falstad for the falstad code that we will incorporate at a later point in time.</p>
+<p class="p6"><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 16.0px Times"><b>To do list:</b></h3>
+<ul class="ul1">
+  <li class="li3">Perform a class design with CRC cards for the different Android activities in your user interface.<span class="Apple-converted-space"> </span></li>
+  <ul class="ul3">
+    <li class="li3">Recommendation: pick one activity per state. <span class="Apple-converted-space"> </span></li>
+    <li class="li3">Put your crc design in writing, simple list each class, its responsibilities and collaborators. Email this to Han Li.</li>
+  </ul>
+  <li class="li3">Create a new Android project in Eclipse.<span class="Apple-converted-space"> </span></li>
+  <ul class="ul3">
+    <li class="li3">On Lab machines, the Android plugin for Eclipse and the emulator are already installed. No additional installation is necessary. You many need to tell your Eclipse configuration where the Android SDK is located.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">Note that an Android project is not(!) a common Java project in Eclipse!<span class="Apple-converted-space"> </span></li>
+    <li class="li3">A new Android project is always generated as a HelloWorld sample application.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">To get more familiar with Android projects, there are different ways to go from here.</li>
+    <ul class="ul2">
+      <li class="li3">You can follow the steps described in Chapter 3, Mark Murphy's book "The Busy Coder's Guide to Android Development" to build a small sample application and run it.<span class="Apple-converted-space"> </span></li>
+      <li class="li7"><span class="s1">Other alternative tutorials are for instance this <a href="http://developer.android.com/resources/tutorials/hello-world.html"><span class="s2">one exercising HelloWorld</span></a> or <a href="http://www.vogella.de/articles/Android/article.html#first"><span class="s2">this more elaborated one with much more information by Lars Vogel</span></a>. <span class="Apple-converted-space"> </span></span></li>
+      <li class="li3">Work through Chapter 4 and 7 in Mark Murphy's book "The Busy Coder's Guide to Android Development" to familiarize yourself with the different bits and pieces that go into an Android project.</li>
+      <li class="li3">With the a HelloWorld that actually works, purposely add code that is faulty to see what error messages this creates. Try some syntax errors. Try calling a method on a variable with value null to see how a null pointer runtime exception is reported and so forth. This makes it easier to recognize what is wrong if your code has errors.</li>
+    </ul>
+  </ul>
+  <li class="li3">Define each activity:</li>
+  <ul class="ul3">
+    <li class="li3">Check tutorials on how to add more activities (e.g. Chapter 22 in Murphy's book or this <a href="http://www.androidcompetencycenter.com/2009/03/tutorial-how-to-start-a-new-activity/"><span class="s3">one</span></a>) and how to make a switch from one activity to another with an intent and parameter settings (e.g. described <a href="http://www.vogella.de/articles/AndroidIntent/article.html"><span class="s3">here</span></a> or <a href="http://www.warriorpoint.com/blog/2009/05/24/android-how-to-switch-between-activities/"><span class="s3">here</span></a>). A tutorial that particularly deals with the communication of data from serializable objects is <a href="http://www.javacodegeeks.com/2010/11/android-full-app-part-5-launch-activity.html"><span class="s3">this</span></a>. Serialization in a general Java setting is also discussed in Horstmann's book, Chapter 7.</li>
+    <li class="li3">Add a corresponding xml file and specify its content in directory res/layout. For the first activity you can refine the pregenerated file main.xml there but for others you need to add a new file for each new activity.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">All strings that you use need to be defined in file res/values/strings.xml.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">Basic widgets are for instance described in Chapter 9 and 10 of Murphy's book.</li>
+    <li class="li3">Update file AndroidManifest.xml to take the new activities into account.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">Add a corresponding java file to src/edu.wm.cs.cs301/UI/ for each activity. Each activity will need its own java class file there.<span class="Apple-converted-space"> </span></li>
+  </ul>
+  <li class="li3">Connect your new project to your subversion repository, update the repository and deliver a release 6.0 to submit your results to the grader.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">Send CRC design description by email to Han Li hli06@email.wm.edu<span class="Apple-converted-space"> </span></li>
+  <li class="li3">Grading</li>
+  <ul class="ul3">
+    <li class="li3">You will receive points for the CRC design description.</li>
+    <li class="li3">You will receive points for a subversion release 6.0 that includes source code and that can be checked out by the grader.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points for implementing each of the 4 activities such that the Eclipse project does not show any syntactical or configuration errors.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points for each activity that the grader is able to run on the emulator and by moving from the starting main activity.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points for feedback that your implementation correctly demonstrates with the help of a toast message and Log.v() in the Eclipse Logcat window in response to individual (and correct) user input.<span class="Apple-converted-space"> </span></li>
+  </ul>
+</ul>
+</body>
+</html>

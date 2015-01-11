@@ -1,0 +1,901 @@
+----------
+Cache Before:
+     cache[1]: 0
+     cache[2]: 0
+IP Address: 64.233.173.85
+MISS
+Cache After:
+     cache[1]: 64.233.173.85
+     cache[2]: 0
+----------
+Cache Before:
+     cache[1]: 64.233.173.85
+     cache[2]: 0
+IP Address: 160.39.244.202
+MISS
+Cache After:
+     cache[1]: 160.39.244.202
+     cache[2]: 64.233.173.85
+----------
+Cache Before:
+     cache[1]: 160.39.244.202
+     cache[2]: 64.233.173.85
+IP Address: 131.111.8.96
+MISS
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 131.111.8.96
+HIT
+Cache After:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+----------
+Cache Before:
+     cache[1]: 131.111.8.96
+     cache[2]: 160.39.244.202
+IP Address: 86.131.243.94
+MISS
+Cache After:
+     cache[1]: 86.131.243.94
+     cache[2]: 131.111.8.96
+----------
+Cache Before:
+     cache[1]: 86.131.243.94
+     cache[2]: 131.111.8.96
+IP Address: 86.131.243.94
+HIT
+Cache After:
+     cache[1]: 86.131.243.94
+     cache[2]: 131.111.8.96
+----------
+Cache Before:
+     cache[1]: 86.131.243.94
+     cache[2]: 131.111.8.96
+IP Address: 86.131.243.94
+HIT
+Cache After:
+     cache[1]: 86.131.243.94
+     cache[2]: 131.111.8.96
+----------
+Cache Before:
+     cache[1]: 86.131.243.94
+     cache[2]: 131.111.8.96
+IP Address: 130.111.218.216
+MISS
+Cache After:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+----------
+Cache Before:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+IP Address: 130.111.218.216
+HIT
+Cache After:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+----------
+Cache Before:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+IP Address: 130.111.218.216
+HIT
+Cache After:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+----------
+Cache Before:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+IP Address: 130.111.218.216
+HIT
+Cache After:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+----------
+Cache Before:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+IP Address: 86.131.243.94
+HIT
+Cache After:
+     cache[1]: 86.131.243.94
+     cache[2]: 130.111.218.216
+----------
+Cache Before:
+     cache[1]: 86.131.243.94
+     cache[2]: 130.111.218.216
+IP Address: 130.111.218.216
+HIT
+Cache After:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+----------
+Cache Before:
+     cache[1]: 130.111.218.216
+     cache[2]: 86.131.243.94
+IP Address: 86.131.243.94
+HIT
+Cache After:
+     cache[1]: 86.131.243.94
+     cache[2]: 130.111.218.216
+----------
+Cache Before:
+     cache[1]: 86.131.243.94
+     cache[2]: 130.111.218.216
+IP Address: 128.239.26.125
+MISS
+Cache After:
+     cache[1]: 128.239.26.125
+     cache[2]: 86.131.243.94
+----------
+Cache Before:
+     cache[1]: 128.239.26.125
+     cache[2]: 86.131.243.94
+IP Address: 128.239.26.125
+HIT
+Cache After:
+     cache[1]: 128.239.26.125
+     cache[2]: 86.131.243.94
+----------
+Cache Before:
+     cache[1]: 128.239.26.125
+     cache[2]: 86.131.243.94
+IP Address: 130.111.218.216
+MISS
+Cache After:
+     cache[1]: 130.111.218.216
+     cache[2]: 128.239.26.125
+----------
+Cache Before:
+     cache[1]: 130.111.218.216
+     cache[2]: 128.239.26.125
+IP Address: 130.111.218.216
+HIT
+Cache After:
+     cache[1]: 130.111.218.216
+     cache[2]: 128.239.26.125
+----------
+Cache Before:
+     cache[1]: 130.111.218.216
+     cache[2]: 128.239.26.125
+IP Address: 130.111.218.216
+HIT
+Cache After:
+     cache[1]: 130.111.218.216
+     cache[2]: 128.239.26.125
+----------
+Cache Before:
+     cache[1]: 130.111.218.216
+     cache[2]: 128.239.26.125
+IP Address: 68.142.250.159
+MISS
+Cache After:
+     cache[1]: 68.142.250.159
+     cache[2]: 130.111.218.216
+----------
+Cache Before:
+     cache[1]: 68.142.250.159
+     cache[2]: 130.111.218.216
+IP Address: 89.54.215.16
+MISS
+Cache After:
+     cache[1]: 89.54.215.16
+     cache[2]: 68.142.250.159
+----------
+Cache Before:
+     cache[1]: 89.54.215.16
+     cache[2]: 68.142.250.159
+IP Address: 128.239.44.145
+MISS
+Cache After:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+----------
+Cache Before:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+IP Address: 128.239.44.145
+HIT
+Cache After:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+----------
+Cache Before:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+IP Address: 128.239.44.145
+HIT
+Cache After:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+----------
+Cache Before:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+IP Address: 128.239.44.145
+HIT
+Cache After:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+----------
+Cache Before:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+IP Address: 128.239.44.145
+HIT
+Cache After:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+----------
+Cache Before:
+     cache[1]: 128.239.44.145
+     cache[2]: 89.54.215.16
+IP Address: 66.249.72.100
+MISS
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 128.239.44.145
+IP Address: 160.39.244.156
+MISS
+Cache After:
+     cache[1]: 160.39.244.156
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 160.39.244.156
+     cache[2]: 66.249.72.100
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 160.39.244.156
+IP Address: 68.142.251.13
+MISS
+Cache After:
+     cache[1]: 68.142.251.13
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 68.142.251.13
+     cache[2]: 66.249.72.100
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 68.142.251.13
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 68.142.251.13
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 68.142.251.13
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 68.142.251.13
+IP Address: 63.237.129.38
+MISS
+Cache After:
+     cache[1]: 63.237.129.38
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 63.237.129.38
+     cache[2]: 66.249.72.100
+IP Address: 63.237.129.38
+HIT
+Cache After:
+     cache[1]: 63.237.129.38
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 63.237.129.38
+     cache[2]: 66.249.72.100
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 63.237.129.38
+IP Address: 70.106.101.121
+MISS
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 70.106.101.121
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 70.106.101.121
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+----------
+Cache Before:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+IP Address: 66.249.72.100
+HIT
+Cache After:
+     cache[1]: 66.249.72.100
+     cache[2]: 70.106.101.121
+----------
+Cache Before:
+     cache[1]: 66.249.72.100
+     cache[2]: 70.106.101.121
+IP Address: 70.106.101.121
+HIT
+Cache After:
+     cache[1]: 70.106.101.121
+     cache[2]: 66.249.72.100
+85 hits

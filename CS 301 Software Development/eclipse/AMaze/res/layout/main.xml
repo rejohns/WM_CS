@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <Spinner android:layout_width="match_parent" 
+    		android:id="@+id/spinner1" 
+    		android:layout_height="wrap_content">
+    	</Spinner>
+    <Spinner android:layout_width="match_parent" 
+    		android:id="@+id/spinner2" 
+    		android:layout_height="wrap_content">
+    	</Spinner>
+    <TextView android:layout_width="wrap_content" 
+    		android:text="Difficulty:" 
+    		android:textAppearance="?android:attr/textAppearanceMedium" 
+    		android:layout_height="wrap_content" 
+    		android:id="@+id/Difficulty:">
+    	</TextView>
+    <SeekBar android:id="@+id/DifficultySlider"
+			android:layout_height="wrap_content" 
+			android:layout_width="match_parent">
+		</SeekBar>
+    <TextView android:layout_width="wrap_content" 
+    		android:text="Show Whole Maze:" 
+    		android:textAppearance="?android:attr/textAppearanceMedium" 
+    		android:layout_height="wrap_content" 
+    		android:id="@+id/ShowWholeMaze:">
+    	</TextView>
+    <ToggleButton android:text="ToggleButton" 
+    			android:id="@+id/ShowWholeMazeButton" 
+    			android:layout_width="wrap_content" 
+    			android:layout_height="wrap_content">
+    	</ToggleButton>
+    <TextView android:layout_width="wrap_content" 
+    			android:text="Show Solution:" 
+    			android:textAppearance="?android:attr/textAppearanceMedium" 
+    			android:layout_height="wrap_content" 
+    			android:id="@+id/ShowSolution:">
+    	</TextView>
+    <ToggleButton android:text="ToggleButton" 
+    			android:id="@+id/SolutionToggleButton" 
+    			android:layout_width="wrap_content" 
+    			android:layout_height="wrap_content">
+    	</ToggleButton>
+    <TextView android:layout_width="wrap_content" 
+    		android:text="Show Visible Walls:"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_height="wrap_content" 
+			android:id="@+id/ShowVisibleWalls:">
+		</TextView>
+    <ToggleButton android:text="ToggleButton" 
+    			android:id="@+id/VisibleWallsToggleButton" 
+    			android:layout_width="wrap_content" 
+    			android:layout_height="wrap_content">
+    	</ToggleButton>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset" />
+
+    </LinearLayout>
+
+</LinearLayout>

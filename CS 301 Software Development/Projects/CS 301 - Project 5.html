@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>CS 301 - Project 1</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1038.36">
+  <style type="text/css">
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times; min-height: 18.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Times}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times}
+    span.s1 {font: 18.0px Times}
+    span.s2 {text-decoration: underline ; color: #0000ee}
+    span.Apple-tab-span {white-space:pre}
+    ul.ul1 {list-style-type: disc}
+    ul.ul2 {list-style-type: circle}
+    ul.ul3 {list-style-type: square}
+  </style>
+</head>
+<body>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 20.0px Times"><span class="s1"><b>P</b></span><b>roject 5: Android App for Maze II,<span class="Apple-converted-space"> </span></b></h2>
+<p class="p2"><br></p>
+<p class="p3">To Deliver: <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>release 7.0</p>
+<p class="p3">To Download:<span class="Apple-converted-space"> <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span></p>
+<p class="p3">Due date for submission:   <span class="Apple-tab-span">	</span>April 12, at noon (12.00 PM)</p>
+<p class="p3">Drop out date:                    <span class="Apple-tab-span">	</span>April 17, at noon (12.00 PM).</p>
+<p class="p2"><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 16.0px Times"><b>Motivation</b></h3>
+<p class="p3">We want to port our maze java application to Android. This requires us to redesign the user interface and to port the Falstad package into the new Android project.</p>
+<p class="p3">Since the new UI from Project 4 handles the different screens, we do not need particular classes from the Falstad package anymore, for example MazeApplication.java and MazeApp.java are not used anymore.</p>
+<p class="p3">We also need to reorganize Maze.java since the different screens and states it currently manages are now handled by the new UI activities. In consequence, Maze.java will loose some of its responsibilities and most likely end up being responsible for a single View inside the MazePlaying activity that visualizes the maze.<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p3">As<span class="Apple-converted-space">  </span>Java AWT and Swing<span class="Apple-converted-space">  </span>packages are not supported on Android, we need to recode the GraphicsWrapper.java implementation in our Android project.<span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p3"><b>What to learn from this project:</b></p>
+<p class="p3">- Experience in difference between the general Java environment and the specific Android Java environment.<span class="Apple-converted-space"> </span></p>
+<p class="p3">- Working with threads (the maze generation operates in a separate thread to keep the UI responsive)</p>
+<p class="p3">- Working with simple graphics in Android</p>
+<p class="p3">- How Android handles graphics and screen updates in its UI thread with a message queue</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p5"><b>Notes</b></p>
+<p class="p2"><br></p>
+<p class="p3">When porting Falstad's code to Android, several issues come up:</p>
+<p class="p2"><br></p>
+<ul class="ul1">
+  <li class="li3"><b>Temporary feedback on what the program is doing: </b>Toasts are too slow and inflexible, focus on the Log.v(), Log.e()… methods and LogCat to obtain output from the Maze program.<span class="Apple-converted-space"> </span></li>
+  <li class="li3"><b>Maze.java: </b>this class looses quite a bit complexity and responsibility. Organizing the generation of a maze according to the user given parameter settings moves into the StateGenerating activity class such that MazeBuilder will interact with the State Generating Activity. Along with the different screens (title, finish etc) multiple attributes like small and large fonts can be removed. Maze.java's main responsibility is reduced to handle the maze visualization in state Play where the maze is on display and either the user manually navigates through the maze or the robot driver and robot explore the maze.</li>
+  <li class="li3"><b>State Generating</b>: Generating the maze takes place in a separate thread to retain an UI the responds to user input.<span class="Apple-converted-space"> </span></li>
+  <ul class="ul2">
+    <li class="li3">There are different design options on how the MazeBuilder thread may deliver the cells, distance matrix and other data to the StatePlay activity. One can serialize the data and communicate it within an intent. One can transfer the data into the applications preferences. There may be even more.</li>
+    <li class="li3">The MazeBuilder thread updates a visualization for the progress that it makes in the Generating activity. One possible visualization is a progress bar. This may require a Handler to handle messages being sent between the MazeBuilder thread and the main thread to inform the main thread about the progress being made in the MazeBuilder thread.</li>
+    <li class="li3">Communication between threads can be handled with a so-called <a href="http://developer.android.com/reference/android/os/Handler.html"><span class="s2">Handler</span></a>, see for instance used in a <a href="http://developer.android.com/guide/topics/ui/dialogs.html#ProgressDialog"><span class="s2">ProgressDialog</span></a>, see also another <a href="http://saeedsiam.blogspot.com/2009/02/first-look-into-android-thread.html"><span class="s2">example with a handler</span></a> and discussion on <a href="http://stackoverflow.com/questions/2799180/update-ui-in-the-main-activity-through-handler-in-a-thread-android"><span class="s2">possible issues with a handler</span></a>.</li>
+  </ul>
+  <li class="li3"><b>State<span class="Apple-converted-space">  </span>Play</b>: <span class="Apple-converted-space"> </span></li>
+  <ul class="ul2">
+    <li class="li3">The phone keyboard on the emulator shows a round shape in the upper part with arrow keys in 4 directions, use these arrow keys in the manual navigation to navigate the robot. The keys are called DPAD in this context, see <a href="http://developer.android.com/reference/android/view/KeyEvent.html"><span class="s2">KeyEvents</span></a>, and a <a href="http://developer.motorola.com/docstools/library/Navigating_Around_Your_Application/"><span class="s2">sample here</span></a>.</li>
+    <li class="li3">We also need to support other keyboard input as in Falstad, e.g. + and - to<span class="Apple-converted-space">  </span>zoom in our out of the map view, consider an<a href="http://developer.android.com/reference/android/view/View.OnKeyListener.html"><span class="s2"> OnKeyListener</span></a> for this.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">To handle the Maze graphics, there are different options, among others one can draw on a Canvas using a View as described <a href="http://developer.android.com/guide/topics/graphics/2d-graphics.html"><span class="s2">here.</span></a><span class="Apple-converted-space"> </span></li>
+    <ul class="ul3">
+      <li class="li3">In this case, drawing the graphics is implemented an OnDraw method and one can cause the Android environment to call OnDraw by a call to the invalidate method.<span class="Apple-converted-space"> </span></li>
+      <li class="li3">The main UI thread has a so-called looper and handles requests for redrawing<span class="Apple-converted-space">  </span>a view in a queue. For the manual operation of the maze, where the user clicks buttons, the integration of the maze graphics and controlling when an update is necessary is reasonably straightforward.<span class="Apple-converted-space"> </span></li>
+      <li class="li3">For the automated exploration with the RobotDriver, it is advisable to consider using a Handler for the UI thread and feeding runnable tasks for robot steps into the handler such that the UI thread faithfully performs all requested updates (check method postdelayed). The UI thread otherwise may bundle invalidate requests and skip some updates. Note that slowing doing the UI thread with sleep commands is NOT a good idea. I found this <a href="http://developer.android.com/resources/articles/timed-ui-updates.html"><span class="s2">timer example</span></a> worthwhile to look at.</li>
+    </ul>
+  </ul>
+</ul>
+<p class="p2"><br></p>
+<p class="p3">As a general advice: do not attempt a big bang integration, identify individual steps, e.g. the integration of the maze generation and make this one work before integrating the graphics part etc.</p>
+<p class="p2"><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 16.0px Times"><b>To do list:</b></h3>
+<ul class="ul1">
+  <li class="li3">Refine the AMaze app from Project 4 into a full blown, working maze application that runs on Android with similar functionality as the maze application worked as a Java application on a PC before.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">Update the repository and deliver a release 7.0 to submit your results to the grader.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">Prepare for a 5-10 min in class presentation of your App with key characteristics of the implementation (focus on aspects that are not necessarily known to all other students in class).</li>
+  <li class="li3">Grading</li>
+  <ul class="ul2">
+    <li class="li3">You will receive points for a subversion release 7.0 that includes source code that can be checked out by the grader.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points if your Android app can be executed and a manual exploration works at least for a small skill level.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points if your Android app can be executed and an automated exploration for the Gambler works at least for a small skill level.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points if your Android app can be executed for any further automated exploration (CuriousGambler, WallFollower, Wizard) at least for a small skill level.<span class="Apple-converted-space"> </span></li>
+    <li class="li3">You will receive points for feedback produced at runtime with Log.v / Log.e etc commands such that one can see the app internally works. <span class="Apple-converted-space"> </span></li>
+  </ul>
+</ul>
+</body>
+</html>

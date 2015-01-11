@@ -1,0 +1,61 @@
+main
+	get args
+	while files
+		make threads
+		join threads
+	while final list is not done
+		print FDQN	IP	(count)
+	print hits/lines
+
+reader
+	while there are lines
+		read line from file
+		sleep for fd seconds
+		increment numlines
+		loop until written data:
+			LOCK BUFFER
+			check buffer
+				if has empty space, write line to buffer, UNLOCK BUFFER
+				else UNLOCK BUFFER, wait for space, go again
+	set reader_done
+	
+lookup
+	while reader is not done or buffer is not empty
+		loop until got data
+			LOCK BUFFER
+			check buffer
+				if buffer has data read, clear space, UNLOCK BUFFER, break loop
+				else UNLOCK BUFFER, wait for data, loop again
+		sleep for td seconds
+		LOCK CACHE
+		check cache for ip
+			if there get host from cache, increment hits, move node to head
+			else get host from internet, add to cache head, remove tail
+		UNLOCK CACHE
+		LOCK FINAL LIST
+		check final list
+			if host in list celebrate
+			else add entry
+		UNLOCK FINAL LIST
+		
+global data
+	node
+		linked list
+		least recently used is tail
+		data: ip, host, next, prev
+	buffer
+		array
+		unsorted
+		data: ip string or null string
+	x - numhits
+	x - numread
+	x - buff_mutex
+	x - cache_mutex
+	x - finallist_mutex
+	x - file
+	x - reader_done
+	x - cache head, pointer, tail
+	x - final list head, pointer, tail
+	
+do waiting with pthreads condition or signaling?
+note: one type of node

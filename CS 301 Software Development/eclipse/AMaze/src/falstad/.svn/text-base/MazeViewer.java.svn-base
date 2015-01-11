@@ -1,0 +1,48 @@
+package falstad;
+
+import edu.wm.cs.cs301.UI.Finish;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnKeyListener;
+
+public class MazeViewer extends View implements OnKeyListener  {
+
+	public MazeViewer(Context context) {
+		super(context);
+		requestFocus();
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public void onDraw(Canvas can){
+		
+	}
+	
+	@Override
+	public boolean onKey(View v, int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_DPAD_UP) {
+			return true;
+		}
+		else if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN) {
+			return true;
+		}
+		else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
+			return true;
+		}
+		else if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
+	        return true;
+		}
+		else if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
+	        return true;
+		}
+		else {
+			Log.v("Play: onButtonPressed", "Wrong button, jackass");
+		}
+		return false;
+	}
+
+}

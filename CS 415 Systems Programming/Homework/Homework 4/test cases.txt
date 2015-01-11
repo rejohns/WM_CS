@@ -1,0 +1,58 @@
+CSCI 415
+Spring 2014
+Programming Assignment 4: Grading Form
+
+STUDENT NAME:
+
+GRADE: [XX/40]
+SLIP DAYS ON THIS ASSIGNMENT: X
+CUMULATIVE SLIP DAYS: X
+
+0. Building the system. [2 points total]:
+ a. A single "make" should build TTT and ttt.
+
+1. Basic operation: single game, everything done quickly enough to
+   avoid timeouts. cd to directory where binaries reside before
+   starting server or clients in all cases. [14 points total]: 
+ a. [2 pts] Bring up TTT; ensure shared file created.
+ b. [2 pts] Bring up first ttt; specify handle and await match.
+ c. [2 pts] Bring up second ttt; specify handle and see that
+            the match is established.
+ d. [4 pts] Play a game so that one player wins; see winner
+            announced; see clients terminate and server survive.
+ e. [4 pts] With the surviving TTT still running, repeat the above
+            to play a second game to a draw.
+
+2. Query Mode. [6 points total]:
+ a. [4 pts] Bring up a new TTT (after killing old one).Establish
+            match as above. Make a couple of moves. Do a
+            "ttt -q". Must get status and see the client terminate
+            without any additional activity on the part of the clients
+            playing the game.
+ b. [2 pts] Play above game to completion. Leave server running.
+            A new "ttt -q" should generate a proper response.
+
+3. Timeouts. [8 points total]:
+ a. [4 pts] Bring up server. Bring up a single client with
+            "ttt -t 120". Should time out in after about 2 minutes.
+ b. [4 pts] Kill server and ensure that control file is deleted.
+            Bring up query client with "ttt -q". Should see the client
+            time out in about 60 seconds. Make sure that a real client
+            invoked with "ttt" also times out in about 60 seconds if
+            the control file is missing (some slop is permitted in
+            this case.)
+
+4. Queued clients. [4 points total]:
+ a. [4 pts] Bring up server. Bring up 2 clients and start a game. In
+            the middle of the game, bring up 2 more clients. Continue
+            the game to completion. Must see the queued clients now
+            start a new game.
+
+5. Abnormal conditions. [6 points total]:
+ a. [4 pts] Bring up a fresh TTT. Establish a match as above. Make a
+            couple of moves. Kill (with a kill -9) one client. Server
+            should detect, match should be aborted, server should
+            be able to establish a new match.
+ b. [2 pts] Bring up a fresh TTT. Establish a match with 2 ttt clients.
+            Bring up 5 more ttt clients. Ensure that the first 4 get
+            queued but the 5th gets rejected.

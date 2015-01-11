@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>CS 301 - Project 1</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1038.36">
+  <style type="text/css">
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times}
+    p.p5 {margin: 0.0px 0.0px 6.0px 0.0px; font: 14.0px Times}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times; min-height: 18.0px}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Times}
+    li.li4 {margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times}
+    span.s1 {text-decoration: underline ; color: #0000ee}
+    span.s2 {font: 12.0px Times}
+    ol.ol1 {list-style-type: decimal}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<h2 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 18.0px Times"><b>Project 1: Implementing a Solution to the Open Knight's Tour Problem</b></h2>
+<p class="p2"><br></p>
+<p class="p3">To Deliver: release 1.0</p>
+<p class="p3">To Download: Additional test cases: /home/scratch/kemper/TourTest.java<span class="Apple-converted-space"> </span></p>
+<p class="p3">Due date for submission:     January 31, at noon (12.00 PM)</p>
+<p class="p3">Drop out date:                    February 3, at noon (12.00 PM)</p>
+<p class="p2"><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times"><b>Motivation</b></h3>
+<p class="p3">The first project asks you to implement a solution to a chess problem, the so-called Knight's tour problem.</p>
+<p class="p5">The knight's tour is a mathematical problem involving a single knight on a chess board. The knight is placed on the empty board and, moving according to the rules of chess, must visit each square exactly once. So on an 8 x 8 board, we have 64 squares and a valid tour is a sequence of 64 positions on the chess board which can be performed by a knight.<span class="Apple-converted-space"> </span></p>
+<p class="p3">A corresponding Wiki page mainly discusses the more special problem of a <a href="http://en.wikipedia.org/wiki/Knight's_tour"><span class="s1">Closed Knight's Tour</span></a>. Please use the wiki page only to better understand the problem of an OPEN knight's tour. The page has a different focus and may mislead you for this project assignment if you go too much through its details.</p>
+<p class="p6"><br></p>
+<p class="p3">The open tour is a simpler problem. It does not require the knight to end at a position such that it could jump to the initial position next.</p>
+<p class="p3">In other words, the open tour does NOT describe a cycle.<span class="Apple-converted-space"> </span></p>
+<p class="p6"><br></p>
+<p class="p3">Please follow a simple brute-force search. You can implement your solution a recursive or an iterative manner. Note that you can add as many additional methods to the class skeletons as you like.<span class="Apple-converted-space"> </span></p>
+<p class="p3">All you need to preserve and support is the externally visible (accessible) interface.<span class="Apple-converted-space"> </span></p>
+<p class="p6"><br></p>
+<p class="p3">You have a template for junit tests from your Homework 1. You are asked to use this to fill in and work out more test cases. <span class="Apple-converted-space"> </span></p>
+<p class="p3">Please also download the set of test cases in /home/scratch/kemper/TourTest.java. These test cases will be used to grade your implementation.</p>
+<p class="p6"><br></p>
+<p class="p3">You can use these test cases for a test-driven development: Assume that you wrote the test cases yourself first. The initial (and basically empty) implementation of KnightsTourP1.java fails all the tests. In following steps you implement individual pieces of functionality in a piecemeal manner such that your code passes one more test in each step. Basically you use each test that the code fails as an intermediate goal to refine your implementation until it passes this test / this requirement. Once all tests are passed your are all set and your code fulfills all the requirements.</p>
+<p class="p6"><br></p>
+<p class="p3">I selected the problem to connect to CS 241 which asked you to implement a solution to this problem in Python. This time you are asked to implement a solution in Java and with a set of regenerated class files.<span class="Apple-converted-space"> </span></p>
+<p class="p6"><br></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times">This first project covers multiple topics that are relevant for this class:</h3>
+<ol class="ol1">
+  <li class="li4">Basic Java programming skills</li>
+  <li class="li4">Unit testing with Junit</li>
+  <li class="li4">Test-driven development</li>
+</ol>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times"><b>To do list:</b></h3>
+<ul class="ul1">
+  <li class="li3"><span class="s2"></span>If you have not performed Homework 1, do so as a first step since this will yield the Eclipse cs301/knighttour project with code skeletons to work on.</li>
+  <li class="li3">Import the additional file TourTest.java into your directory test that holds test cases. You can copy the file from /home/scratch/kemper/TourTest.java on the CS121 lab machines.</li>
+  <li class="li3">Create a documentation with javadoc in html format for your own productivity: in eclipse call menu-Project-Generate Javadoc, let generated files reside in directory knighttour/doc</li>
+  <li class="li3">Implement a solution to the knight's tour problem in class knightTourP1.java such that it implements the Tour.java interface.</li>
+  <li class="li3">Implement further test cases in file TourTestP1.java.</li>
+  <li class="li3">Update your subversion repository whenever you made progress and got a particular feature or method going. Create a tag with a Release 1.0 before the drop out date (due date is recommended for your own sanity). Include your junit test cases in your release.<span class="Apple-converted-space"> </span></li>
+  <li class="li3">We will run and evaluate your tests as well as our own that will test your KnightTourP1.java class.</li>
+</ul>
+<p class="p6"><br></p>
+<ul class="ul1">
+  <li class="li3"><b>Grading:<span class="Apple-converted-space"> </span></b></li>
+</ul>
+<p class="p2"><br></p>
+<ul class="ul1">
+  <li class="li3">You will receive points if:</li>
+  <li class="li3">Your SVN Repository works: your subversion repository is set up correctly and the grader can download your release 1.0 from it.</li>
+  <li class="li3">Your implementation has been coded: for every method of the Tour.java interface that is fully implemented in KnightTourP1.java.</li>
+  <li class="li3">Your implementation passes test cases: for every test of TourTest.java that your implementation of KnightTourP1 passes.</li>
+  <li class="li3">Your own tests cases help: Bonus points if your test cases cover interesting additional aspects</li>
+</ul>
+</body>
+</html>

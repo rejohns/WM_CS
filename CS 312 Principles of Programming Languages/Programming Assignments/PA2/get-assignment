@@ -1,0 +1,3 @@
+#!/bin/bash
+cp -r /home/scratch/cs312/PA2 .
+echo "CS312 Programming Assignment 2 copied" 

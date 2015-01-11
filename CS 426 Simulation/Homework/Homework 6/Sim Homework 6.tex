@@ -1,0 +1,119 @@
+\documentclass[11pt]{article} % 
+\usepackage[pdftex]{graphicx}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{psfrag}
+\usepackage{pgf}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\tab}{\;\;\;\;\;}
+\newcommand{\inv}{^{-1}}
+\newcommand{\tr}{\textrm}
+
+\begin{document}
+
+\hfill Robert Johns
+
+\hfill November 11, 2013
+
+\begin{center} {\Large CSCI 426: Simulation}\\{\large Homework 6}\end{center}
+
+\begin{enumerate}
+
+\item[7.1.3] If $X$ is a continuous random variable with pdf $f(\cdot)$, mean $\mu$ and variance $\sigma^2$ prove that
+$$\int_x x^2f(x)\;dx = \mu^2 + \sigma^2$$
+where the integration is over all possible values of $X$.
+
+{\bf Proof:} We know that the formula for the variance is $\sigma^2 = E[(x-\mu)^2]$ which, when reduced, gives us $E[x^2 -2\mu x + \mu^2] = E[x^2] - 2\mu^2 + \mu^2 = E[x^2] - \mu^2$.  Since our given integral is $E[x^2]$, we have from the previous formula that $E[x^2] = E[(x-\mu)^2] - (\mu^2 - 2\mu^2) = \sigma^2 + \mu^2$
+
+\item[7.2.4] A continuous random variable $X$ is $Weibull(a,b)$ if the real-valued parameters $a$ and $b$ are positive, the possible values of $X$ are $x > 0$, and the cdf is:
+$$F(x) = 1- \tr{exp}(-(bx)^a)$$
+What are the pdf and idf?
+
+{\bf Solution:} To find the pdf $f(x)$, we simply take the derivative, which gives us:
+$$f(x) = \frac{a(bx)^a\cdot \tr{exp}(-(bx)^a)}{x}$$
+To find the idf, we take the inverse function of $F(x)$, replacing the term $F(x)$ with $u$, where $u\in(0,1)$, which gives us:
+$$u = 1 - \tr{exp}(-(bx)^a)$$
+$$ 1 - u = \tr{exp}(-b^ax^a)$$
+$$ \ln(1-u) = -b^ax^a$$
+$$ \frac{-\ln(1-u)}{b^a} = x^a$$
+$$ \sqrt[a]{\frac{-\ln(1-u)}{b^a}} = x$$
+$$ \frac{\sqrt[a]{-\ln(1-u)}}{b} = x = F\inv(u)$$
+We know this will be real-valued for all $u\in(0,1)$ because $\ln(x)$ is negative for all $x\in(0,1)$.
+
+\newpage
+
+\item[7.3.5] 
+
+\begin{enumerate}
+\item Derive the equations for the mean and standard deviation of a $Triangular(a,b,c)$ random variable.
+
+{\bf Solution:} To get the mean, we evaluate $\int_a^cxf(x)\;dx$, which, since our function is defined piecewise, gives us $\mu = \int_a^bxf(x)\;dx + \int_b^cxf(x)\;dx$, which is
+$$\mu = \int_a^bx\frac{2(x-a)}{(b-a)(c-a)}\;dx + \int_b^cx\frac{2(b-x)}{(b-a)(b-c)}\;dx$$
+Our final value will be:
+$$\mu = \left(\frac{2}{(b-a)(c-a)}\right)\left(\frac{b^3}{3} - \frac{a^3}{3} - \frac{b^2a}{2} + \frac{a^3}{2}\right)
++ \left(\frac{2}{(b-a)(b-c)}\right)\left(\frac{c^2b}{2}-\frac{b^3}{2} -\frac{c^3}{3}+\frac{b^3}{3}\right)$$
+which reduces to
+$$\mu = \frac{a+b+c}{3}$$
+
+To get the standard deviation, we do it all over again, except with $\int_a^cx^2f(x)\;dx$, and take the square root to obtain a final value of:
+$$\sigma = \sqrt{\left(\frac{2}{(b-a)(c-a)}\right)\left(\frac{b^4}{4} - \frac{a^4}{4} - \frac{b^3a}{3} + \frac{a^4}{3}\right)
++ \left(\frac{2}{(b-a)(b-c)}\right)\left(\frac{c^3b}{3}-\frac{b^4}{3} -\frac{c^4}{4}+\frac{b^4}{4}\right)}$$
+which reduces to
+$$\sigma = \frac{\sqrt{(a-b)^2 + (a-c)^2 + (b-c)^2}}{6}$$
+
+\item Similarly, derive the results for the cdf and idf.
+
+{\bf Solution:} To get the cdf, we integrate $f(x)$ piecewise from $a$ to $x$, then take the integral from $x$ to $b$ subtracted from 1 to obtain our cdf $F(x)$.  We will get, for values $x$ such that $a< x\le c$,
+$$\frac{2}{(b-a)(c-a)}\int_a^xx-a\;dx = \frac{2}{(b-a)(c-a)}\frac{x^2 -2ax - a^2 + 2a^2}{2} = \frac{(x-a)^2}{(b-a)(c-a)}$$
+And for values from $c$ to $b$, we will get
+$$1-\frac{2}{(b-a)(b-c)}\int_x^bb-x \;dx = 1- \frac{2}{(b-a)(b-c)}\frac{2b^2 -b^2 -2bx + x^2}{2} = 1 - \frac{(b-x)^2}{(b-a)(b-c)}$$
+Our final piecewise function will therefore be:
+$$F(x) = \left\{\begin{array}{ll}
+0 & x \le a\\
+\frac{(x-a)^2}{(b-a)(c-a)} & a < x \le c \\
+1 - \frac{(b-x)^2}{(b-a)(b-c)} & c < x < b \\
+1 & x \ge b
+\end{array}\right.$$
+
+\newpage
+
+To get the idf, we take the inverse of $F(x)$, replacing the term $F(x)$ with $u$, where $u \in (0,1)$.  Our derivation for values of $x$ between $a$ and $c$ will be:
+$$u = \frac{(x-a)^2}{(b-a)(c-a)}$$
+$$u(b-a)(c-a) = (x-a)^2$$
+$$\sqrt{u(b-a)(c-a) = x-a}$$
+$$x = \sqrt{u(b-a)(c-a)} + a$$
+This function will be defined for values of $x$ between 0 and $\frac{(c-a^2)}{(b-a)(c-a)} = \frac{c-a}{b-a}$
+
+To get the second piece of the idf, we take the inverse of the function for values of $x$ between $c$ and $b$.  We get:
+$$u  = 1 - \frac{(b-x)^2}{(b-a)(b-c)}$$
+$$(1-u)(b-a)(b-c) = (b-x)^2$$
+$$\sqrt{(1-u)(b-a)(b-c) = b-x}$$
+$$x = b - \sqrt{(1-u)(b-a)(b-c)}$$
+
+This function will be defined from values of $x$ between $\frac{c-a}{b-a}$ and 1, giving us an idf of:
+$$F\inv(u) = \left\{\begin{array}{ll}
+\sqrt{u(b-a)(c-a)} + a & 0  < u \le \frac{c-a}{b-a}\\
+b - \sqrt{(1-u)(b-a)(b-c)} & \frac{c-a}{b-a} < u < 1 
+\end{array}\right.$$
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

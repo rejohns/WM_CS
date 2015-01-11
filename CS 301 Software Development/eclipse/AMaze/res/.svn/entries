@@ -1,0 +1,56 @@
+10
+
+dir
+70
+svn+ssh://ren.cs.wm.edu/home/f85/rejohns/svncs301/AMaze/trunk/AMaze/res
+svn+ssh://ren.cs.wm.edu/home/f85/rejohns/svncs301
+
+
+
+2012-04-01T23:04:02.634678Z
+70
+rejohns
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+141c6fac-484c-11e1-8663-fb40da1c4c32
+
+
+
+
+
+
+0
+
+drawable-hdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
+layout
+dir
+
+raw
+dir
+
+values
+dir
+
+xml
+dir
+

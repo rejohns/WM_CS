@@ -1,0 +1,60 @@
+CSCI 415
+Spring 2014
+Programmming Assignment 1: Grading Form
+-----------------------------------------
+
+STUDENT NAME: Johns, Robert E.
+
+GRADE: [7/10]
+SLIP DAYS ON THIS ASSIGNMENT: 0
+CUMULATIVE SLIP DAYS: 0
+
+1. [3 pts] Normal Case:3 
+
+   beetle 10 10000
+  
+   Should produce mean lifetime of 67.0 +- 3 (in required format).
+   The interval (roughly 10% of correct answer) should wash out
+   differences due to valid uses of random().
+
+
+2. [2 pts] Odd, but Legal, Case:0
+
+   beetle 1 10000
+
+   Should produce mean lifetime of 1.0. The beetle is guaranteed to
+   die on its first move.
+@@@@@@@@@@@@@@@@@@@@@@@@@@
+1 by 1 square, 10000 beetles, mean beetle lifetime is 1.2
+@@@@@@@@@@@@@@@@@@@@@@@@@@
+3. [1 pt] Longer Run, Stress Test:1
+
+   beetle 50 10000
+
+   Should produce 1520 +- 50. Interval serves same purpose as in 1.
+
+4. [1 pt] Bad Number of Arguments:1
+
+   beetle
+
+   Should abort with appropriate error message.
+
+5. [1 pt] Zero Argument:0
+
+   beetle 0 10
+
+   Should abort with appropriate error message.
+@@@@@@@@@@@@@@@@@@@@@@@
+0 by 0 square, 10 beetles, mean beetle lifetime is 1.0
+@@@@@@@@@@@@@@@@@@@@@@@
+6. [1 pt] Floating Point Argument:1
+
+   beetle 10.0 300
+
+   Should abort with appropriate error message.
+
+7. [1 pt] Invalid Integer Argument:1
+
+   beetle 10 1000z
+
+   Should abort with appropriate error message.

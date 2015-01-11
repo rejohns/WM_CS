@@ -1,0 +1,44 @@
+CSCI415
+Spring 2014
+Programming Assignment 7: Grading Form
+
+STUDENT NAME:
+  
+GRADE: [XX/20]
+
+============================================================
+Setting up a game:
+- in window 1: ssh to lab system; cd to test directory; ./TTT
+- in window 2: cd to test directory; ./ttt
+- in window 3: cd to test directory; ./ttt
+
+(Note that clients are both on local system to make beeps
+audible.)
+============================================================
+
+1. Required graphical elements [3 points total]
+
+   Over the course of grading ensure that the following required elements
+   are present: canvas with tic-tac-toe grid; text display with handle
+   and symbol for each player and status; sound/silent button;
+   resignation button; exit button.
+
+2. Game play [12 points total]
+   a. [2 pts] Your turn and mouse left on unoccupied square results
+              in a move and appropriate symbol in the square.
+   b. [2 pts] After opponent moves, her symbol shows up in proper
+              place on your display.
+   c. [1 pt]  Status display managed correctly.
+   d. [1 pt]  Win/loss/draw all announced, as appropriate.
+   e. [2 pts] On win or loss, line drawn through winning sequence.
+   f. [2 pts] Resignation handled correctly.
+   g. [2 pts] Exit after game completed brings down display cleanly.
+
+3. Details [5 points total]
+   a. [2 pts] Make sure Sound/Silent is really a toggle. Make illegal
+              moves in both sound and silent mode and listen for beep.
+   b. [1 pts] Exit should be a no-op while the game is in progress.
+   c. [1 pts] Mousing left on the board when not your turn is a
+              no-op.
+   d. [1 pts] Cannot click in an occupied square: no-op and beep
+              sounds (in sound mode).

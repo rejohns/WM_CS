@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="choose_maze">Choose a maze type:</string>
+    <string-array name="maze_array">
+    	<item>Falstad</item>
+    	<item>Prim</item>
+    </string-array>
+    <string name="app_name">AMaze</string>
+    <string name="choose_solver">Choose a solver algorithm:</string>
+    <string-array name="solver_array">
+    	<item>Manual</item>
+    	<item>Gambler</item>
+    	<item>CuriousGambler</item>
+    	<item>Wall Follower</item>
+    	<item>Wizard</item>
+    </string-array>
+    <string name="Difficulty">Difficulty:</string>
+    <string name="showmaze">Show Whole Maze:</string>
+    <string name="showSolution">Show Solution:</string>
+    <string name="showWalls">Show Visible Walls:</string>
+    <string name="generating">The maze is now generating...</string>
+    <string name="playing">Playing the Maze:</string>
+    <string name="remainingEnergy">Energy remaining:</string>
+    <string name="winner">You win! Click back to restart.</string>
+    <string name="consumption">Energy Consumption:</string>
+    <string name="pathlength">Path Legnth:</string>
+</resources>

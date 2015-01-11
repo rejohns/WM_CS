@@ -1,0 +1,22 @@
+Tic-tac-toe
+
+All about networking
+
+TTT running on internet somewhere
+Any number of ttt processes running somewhere on internet. IPv4, af_inet
+TTT needs at least one socket for listening and accepting
+Client ttt has socket for connection attempts. 
+Server TTT should not be doing fork()s
+New sockets for each ttt connection to TTT (through virtual circuits [?])
+Clients don't talk to each other directly- server manages everything
+Only two clients at a time can engage in gameplay- others that try to connect must wait
+Client can invoke ttt -t [to] to wait and timeout after waiting for to seconds
+Server posts datagram socket-  client that invokes ttt -q will get datagram indicating whether or not server is busy
+Query data has priority over gameplay on TTT
+Max of four waiting at a time
+Since we don't have a well-known server and dedicated port, if running on department machines there's a ./.mydata in current directory [or anywhere where TA will have write access] with specified port numbers
+We must come up with messaging protocol to determine what kind of messages to send back and forth
+Client just specifies whether or not move is legitimate, does not determine win or loss
+Server is daemon, clients terminate
+Connections are virtual circuits (byte stream) -how to get effect of messages? Suggestion: char msg[20] (not necessarily 20) for fixed-length messages: spot 0 for message type code (a for who, b for handle, etc), 1-9 for cells, etc
+Server should resist malicious clients (early termination: unexpected eof- sigpipe, epipe; etc)

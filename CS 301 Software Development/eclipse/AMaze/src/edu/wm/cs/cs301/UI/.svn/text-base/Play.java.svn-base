@@ -1,0 +1,54 @@
+package edu.wm.cs.cs301.UI;
+
+import falstad.Cells;
+import falstad.Maze;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnKeyListener;
+import android.widget.Button;
+
+public class Play extends Activity{
+
+	public Maze maze;
+	public Cells cells;
+	
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.play);
+	
+	    // TODO Auto-generated method stub
+        Button back = (Button) findViewById(R.id.button4);
+        back.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+		        Intent i = new Intent(v.getContext(), Title.class);
+		        startActivityForResult(i, 0);
+		        Log.v("Play: backButton", "returning to title sreen");
+			}
+		});
+        
+        Button finish = (Button) findViewById(R.id.button10);
+        finish.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+		        Intent i = new Intent(v.getContext(), Finish.class);
+		        startActivityForResult(i, 0);
+		        Log.v("Play: next button", "proceeding to finish sreen");
+			}
+		});
+       
+        maze = Generating.maze;
+        cells = Generating.maze.mazecells;
+        Log.v("Play: testing if the maze actually generated", cells.toString());
+        
+	}
+
+}

@@ -1,0 +1,84 @@
+package falstad;
+
+
+/**
+ * 
+ * @author rejohns
+ * @author bmlassiter
+ */
+public class Wizard implements RobotDriver {
+
+	public int turns = 1;
+	public int walks = 1;
+	public int sights = 1;
+	public Robot bot;
+	
+	/**
+	 * Assigns a robot platform to the driver. Not all robot configurations may be suitable such that the method 
+	 * will throw an exception if the robot does not match minimal configuration requirements, e.g. providing a sensor
+	 * to measure the distance to an object in a particular direction. 
+	 * @param r robot to operate
+	 * @throws UnsuitableRobotException if driver cannot operate the given robot
+	 */
+	public void setRobot(Robot r) throws UnsuitableRobotException {
+		bot = r;
+	}
+
+	/**
+	 * Drives the robot towards the exit given it exists and given the robot's energy supply lasts long enough. 
+	 * @return true if driver successfully reaches the exit, false otherwise
+	 * @throws exception if robot stopped due to an accident
+	 */
+	public boolean drive2Exit() throws Exception {
+		boolean solved = false;
+		Maze maze = bot.getMaze();
+		int d = maze.mazedists[maze.px][maze.py];
+		// case 1: we are not directly next to the final position
+		while (! solved) {
+			if (d > 1) {
+				int n = maze.getDirectionIndexTowardsSolution(maze.px,maze.py,d);
+				maze.rotateTo(n);
+				turns += 1;
+				maze.walk(1);
+				walks += 1;
+				sights += 1;
+			}
+			// case 2: we are one step close to the final position
+			int n;
+			int[] masks = Cells.getMasks() ;
+			for (n = 0; n < 4; n++) {
+				// skip this direction if there is a wall or border
+				if (maze.mazecells.hasMaskedBitsGTZero(maze.px, maze.py, masks[n]))
+					continue;
+				// stop if position in this direction is end position
+				if (maze.isEndPosition(maze.px+MazeBuilder.dirsx[n], maze.py+MazeBuilder.dirsy[n]))
+					break ;
+			}
+			maze.rotateTo(n);
+			turns += 1;
+			maze.walk(1);
+			walks += 1;
+			sights += 1;
+			solved = true;
+		}
+		sights -= 1;
+		walks -= 1;
+		turns -= 1;
+		return solved;
+	}
+	
+	/**
+	 * Returns the total energy consumption of the journey
+	 */
+	public float getEnergyConsumption() {
+		return (walks * 5) + (turns * 3) + sights;
+	}
+	
+	/**
+	 * Returns the total length of the journey in number of cells traversed. The initial position counts as 0. 
+	 */
+	public int getPathLength() {
+		return walks;
+	}
+	
+}

@@ -1,0 +1,57 @@
+CSCI415
+Spring 2014
+Programming Assignment 5: Partial Grading Form
+
+16 of the 30 points are given here.
+
+============================================================
+
+
+NOTE: all tests should be run on the system named bg1. This
+      machine is effectively a 16 processor 64-bit system.
+      I have disabled nscd on bg1 to make DNS lookups slower.
+
+0. System build. [2 points total]
+
+   [1 pt]  Unpack submission into directory. Make that directory
+           the cwd. A simple "make" should build the binary.
+
+1. Basic operation [15 points total]:
+
+   Copy 100line and 1000line from the web page into the
+   directory where the program is to be tested.
+
+a. [5 pts] Execute the following command to check basic i/o and
+           counting:
+
+	   ./refstats -b 4 -N 2 -d 0 -D 0 100line
+
+           Simply check the output for correctness.
+
+b. [5 pts] Execute the following command to check multi-thread
+           operation:
+
+	   ./refstats -b 4 -N 2 -d 1000 -D 1000 100line
+	   
+           Note that there is a 1 second delay associated with
+	   reading from the buffer and after a DNS lookup.
+	   This should let you run "ps -eLf" in another window to
+	   see 4 threads: main, reader, and 2 lookup threads.
+
+	   Also check that the execution of the program is
+	   consistent with the 1 sec delays.
+
+	   Output must also be correct.
+
+           NOTE: if program is not multi-threaded, no credit will
+           be received for grading items 1, 2, and 3.
+
+2. LRU Cache Management [10 points total]:
+                                          
+a. [5 pts] Execute the following:
+           
+	   ./refstats -b 1 -N 100 -d 0 -D 0 100line 
+	   
+           Compare the cache hit rate with the hand-computed hit rate.
+           The cache is big enough so that only the first appearance of
+           an IP address will cause a fault.

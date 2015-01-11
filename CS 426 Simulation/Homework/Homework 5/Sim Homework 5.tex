@@ -1,0 +1,171 @@
+\documentclass[11pt]{article} % 
+\usepackage[pdftex]{graphicx}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{psfrag}
+\usepackage{pgf}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\tab}{\;\;\;\;\;}
+\newcommand{\inv}{^{-1}}
+
+\begin{document}
+
+\hfill Robert Johns
+
+\hfill October 30, 2013
+
+\begin{center} {\Large CSCI 426: Simulation}\\{\large Homework 5}\end{center}
+
+\begin{enumerate}
+
+%1
+\item[5.1.8] Modify program \texttt{ssq3} to account for a finite service-node capacity.
+
+[modified code given at end of assignment]
+
+\begin{enumerate}
+
+%1a
+\item Find the proportion of rejected jobs for capacities 1, 2, 3, 4, 5 and 6.  
+
+{\bf Solution:} We get the following table of results:
+
+$$\begin{array}{|c|l|}\hline
+\textrm{capacity} & \textrm{percentage rejected}\\\hline\hline
+   1 & 0.43\\\hline
+   2 & 0.18\\\hline
+   3 & 0.09\\\hline
+   4 & 0.05\\\hline
+   5 & 0.03\\\hline
+   6 & 0.02\\\hline
+\end{array}$$
+
+%1b
+\item Repeat this experiment if the service time distribution is $Uniform(1.0, 3.0)$.
+
+{\bf Solution:} We get the following table of results:
+
+$$\begin{array}{|c|l|}\hline
+\textrm{capacity} & \textrm{percent rejected}\\\hline\hline
+   1 & 0.50\\\hline
+   2 & 0.28\\\hline
+   3 & 0.19\\\hline
+   4 & 0.14\\\hline
+   5 & 0.11\\\hline
+   6 & 0.09\\\hline
+\end{array}$$
+
+%1c
+\item Comment (use a large value of \texttt{STOP}).
+
+{\bf Solution:} These results make intuitive sense.  Clearly, if we increase the capacity, the percentage rejected will decrease, and if we increase the mean service time, the percentage rejected will increase.  The large value of \texttt{STOP} chosen gives us a good sample size, and thus, statistically significant information.  It appears that increasing the service time has a negative effect that outweighs increasing the capacity, as the percent rejected decreases slower with the expanded service time than with the original service time.
+
+\end{enumerate}
+
+\newpage
+
+%2
+\item[6.1.5] Let $X$ be a discrete random variable with possible values $x = 1, 2, \dots, n$.
+
+\begin{enumerate}
+
+%2a
+\item If the pdf of $X$ is $f(x) = \alpha x$, then what is $\alpha$ (as a function of $n$)?
+
+{\bf Solution:} We know from the definition of a pdf that $\sum_{x=1}^n\alpha x = 1$ necessarily.  So we have $\alpha + 2\alpha + \dots + n\alpha = \alpha(1 + 2 + \dots + n) = \alpha\frac{n^2 + n}{2} = 1$.  Solving for $\alpha$, we obtain $\alpha = \frac{2}{n^2 + n}$.
+
+%2b
+\item What are the cdf, mean, and standard deviation of $X$?
+
+{\bf Solution:} To get the cdf, we use the definition to obtain $F(x) = Pr(X\le x) = \sum_{i = 1}^x \frac{2}{n^2 + n}i = \frac{2}{n^2+n}\sum{i=0}{x} = \frac{2}{n^2 + n}\cdot\frac{x^2 + x}{2}$, or $F(x) = \frac{x^2 + x}{n^2 + n}$.
+
+To get the mean, we use the definition to obtain $E[X] = \sum_{x = 1}^nxf(x) = \sum_{x = 1}^nx^2\frac{2}{n^2 + n} = \frac{2}{n^2+n}\sum_{x= 1}^n x^2 = \frac{2}{n(n+1)}\cdot \frac{n(n+1)(2n+1)}{6} = \frac{2n+1}{3}$
+
+To get the standard deviation, we use the definition of the variance to obtain $\sigma^2 = E[X^2] - E[X]^2 = \sum_{x = 1}^nx^2f(x) - (\frac{2n+1}{3})^2 = \sum_{x = 1}^nx^3\frac{2}{n^2+n} - (\frac{2n+1}{3})^2 = \frac{2}{n^2+n}\sum_{x = 1}^nx^3 - (\frac{2n+1}{3})^2 = \frac{2}{n(n+1)}\cdot\frac{n^2(n+1)^2}{4} - (\frac{2n+1}{3})^2 = \frac{n(n+1)}{2} - (\frac{2n+1}{3})^2$, and taking the square root we obtain $\sigma = \sqrt{\frac{n(n+1)}{2} - (\frac{2n+1}{3})^2}$
+
+\end{enumerate}
+
+%3
+\item[6.3.1] \begin{enumerate}
+
+%3a
+\item Suppose you wish to use inversion to generate a $Binomial(100,0.1)$ random variate $X\;truncated$ to the subrange $x = 4, 5, \dots 16$.  How would you do it? Work through the details.
+
+{\bf Solution:} I would use the truncation by cdf modification technique.  We know that the pdf and cdf of a $Binomial(100,0.1)$ random variable are, respectively: 
+$$f(x) = \binom{100}{x}0.1^x0.9^{100-x}\textrm{, and } F(x) = \sum_{i = 0}^xf(i)$$
+We need $f(x)$ for the numerator of our truncated pdf and $F(16)$ and $F(3)$ for the denominator, which will be $F(16)-F(3) = \sum_{x= 0}^{16}f(x) - \sum_{x=0}^3f(x) = \sum_{x = 4}^{16}f(x)$.  Our corresponding truncated pdf will be: 
+$$f_t(d) = \frac{f(d)}{\sum_{x = 4}^{16}f(x)} = \frac{f(d)}{F(16) - F(3)}$$
+and the corresponding cdf would be:
+$$F_t(d) = \frac{\sum_{x = 0}^df(x) - \sum_{x = 0}^3f(x)}{\sum_{x = 4}^{16}f(x)} = 
+\frac{\sum_{x = 4}^df(x)}{\sum_{x = 4}^{16}f(x)} = \frac{F(d) - F(3)}{F(16) - F(3)}$$
+So we now have a pdf and cdf for our truncated variable.  We need to generate a random variate using these formulas, which we can do by using the inverted cdf technique; that is, let $u$ be a uniform random variable between 0 and 1, and solving $u = \frac{F(d) - \beta}{\alpha}$, or $\alpha u + \beta = F(d)$, or $d = F\inv(\alpha u + \beta)$, where $\alpha = F(16) - F(3)$ and $\beta = F(3)$.  From the program \texttt{rvms.c}, we can get $\alpha, \beta$ and $F\inv$, so the algorithm will work.
+
+\newpage
+
+%3b
+\item What is the value of the mean and standard deviation of the resulting truncated random variate?
+
+{\bf Solution:} To get the mean, we need 
+$$\mu = \sum_{x = 4}^{16}xf_t(x) = \frac{1}{F(16) - F(3)}\sum_{x = 4}^{16}xf(x)$$
+We can obtain it from the algorithm listed at the bottom of the page, and get the following result for the mean: $\boxed{\mu = 9.82}$.
+
+To get the variance, we need 
+$$\sigma^2 = \sum_{x = 4}^{16}x^2f_t(x) - \mu^2 = \frac{1}{F(16) - F(3)}\sum_{x = 4}^{16}x^2f(x) - \mu^2$$
+We will then take the square root to obtain the standard deviation.  We can obtain it by slightly modifying the preceding algorithm to obtain $\boxed{\sigma = 2.7347}$
+
+The aforementioned algorithm:
+
+\begin{verbatim}
+#include <stdio.h>
+#include "rvms.h"
+#include <math.h>
+
+int main(void) {
+	
+        double n = cdfBinomial(100, .1, 16) - cdfBinomial(100, .1, 3);
+        double alpha = 1/n;
+        double sum = 0;
+        double sum2 = 0;
+        double index;
+        double mean;
+        double variance;
+        double std; 
+	
+        for (index = 4; index <= 16; index++) {
+                sum += (index * pdfBinomial(100, .1, index));
+                sum2 += (index * index * pdfBinomial(100, .1, index));
+        }
+	
+        mean = sum * alpha;
+        variance = sum2 * alpha - mean * mean;
+        std = sqrt(variance);
+	
+       	printf("mean: %5.4f\n", mean);
+        printf("variance: %5.4f\n", variance);
+        printf("standard d: %5.4f\n", std);
+	
+        return 0;
+}
+\end{verbatim}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

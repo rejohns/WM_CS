@@ -1,0 +1,252 @@
+\documentclass[11pt]{article} % 
+\usepackage[pdftex]{graphicx}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{psfrag}
+\usepackage{pgf}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\tab}{\;\;\;\;\;}
+\newcommand{\inv}{^{-1}}
+
+\begin{document}
+
+\hfill Robert Johns
+
+\hfill October 2, 2013
+
+\begin{center} {\Large CSCI 426: Simulation}\\{\large Homework 3}\end{center}
+
+\begin{enumerate}
+
+%1
+%3.1.5
+\item[3.1.5]
+\begin{enumerate}
+
+\item Verify that the mean service time in Example 3.1.4 is 1.5
+
+{\bf Solution:} Verified by modifying \texttt{ssq2.c} as instructed in Example 3.1.4.  The additional code is a modified version of \texttt{GetService(void)} and a new function \texttt{Geometric(double p)}, which are written below:
+
+\begin{verbatim}
+long Geometric(double p) {
+        	return ((long) (log(1.0 - Random()) / log(p)));
+}
+
+double GetService(void) {
+        long k;
+        double sum = 0.0;
+        long tasks = 1 + Geometric(0.9);
+  
+        for (k = 0; k < tasks; k++) {
+                 sum += Uniform(0.1, 0.2);
+        }
+        return(sum);
+}
+\end{verbatim}
+
+The additional code yielded a result ing $\bar{s}$ of 1.49, which is negligibly less than the given result of 1.50.
+
+\item Verify that the steady-state statistics in Example 3.1.4 seem to be correct.
+
+{\bf Solution:} Verified by running the program using the same code as above.  The average wait, average delay, average number in the node and average number in the queue all differed slightly, though negligibly from the given results in the book.  The statistics follow:
+
+$$\begin{array}{|c|c|c|}\hline
+\textrm{statistic} & \textrm{exercise value} & \textrm{example value}\\\hline\hline
+\textrm{average interarrival time} &   2.00 & 2.00\\\hline
+\textrm{average wai}t  &  6.02 & 5.77\\\hline
+\textrm{average delay}  &   4.53 & 4.27\\\hline
+\textrm{average service time}  &   1.49 & 1.50\\\hline
+\textrm{average in the node} &   3.02 & 2.89\\\hline
+\textrm{average in the queue} &   2.27 & 2.14 \\\hline
+\textrm{utilization} &   0.75 & 0.75 \\\hline
+\end{array}$$
+
+\item Note that the arrival rate, service rate, and utilization are the same as those in Example 3.1.3.  Explain (or conjecture) why this is so.
+
+{\bf Solution:} We did not change \texttt{GetArrival(void)}, so the arrival rate should be the same.  The service rate will be the same because the parameter chosen (0.9) for the geometric random variable will create a function similar to a uniform random variable, which is how the service time is calculated in Example 3.1.3.  Utilization depends on arrival time and service rate, so it will be unchanged as the other two are unchanged.
+
+\end{enumerate}
+
+\newpage
+
+%2
+%3.2.1
+\item[3.2.1] \begin{enumerate}
+
+\item Construct the $a = 16807$ version of the table in Example 3.2.6.
+
+{\bf Solution:} We have $(a, m) = (16807, 2^{31}-1)$.  Our table will be:
+
+\begin{center}$\begin{array}{|c|c|c|c|}\hline
+s & \lfloor m/s\rfloor & j & a^j\mod m\\\hline
+1024 & 2097151 & 2085659 & 8208 \\\hline
+512 & 4194303 & 4184337 & 374844 \\\hline
+256 & 8388607 & 8335476 & 36563 \\\hline
+128 & 16777215 & 16776028 & 188756 \\\hline
+\end{array}$\end{center}
+
+\item What is the time complexity of the algorithm you used?
+
+{\bf Solution:} A constant-time set of operations is used for each $n$, so our algorithm is $O(n)$.
+
+\end{enumerate}
+
+%3
+%3.3.6
+\item[3.3.6] \begin{enumerate}
+
+\item Relative to Example 3.3.5, construct a figure or table illustrating how $\bar{x}$ (utilization) depends on $M$.
+
+{\bf Solution:}
+
+$$\begin{array}{|c|c|}\hline
+M & \bar{x}\\\hline\hline
+20 & 0.29\\\hline
+25 & 0.37\\\hline
+30 & 0.44\\\hline
+35 & 0.51\\\hline
+40 & 0.58\\\hline
+45 & 0.66\\\hline
+50 & 0.72\\\hline
+55 & 0.79\\\hline
+60 & 0.86\\\hline
+65 & 0.91\\\hline
+70 & 0.96\\\hline
+75 & 0.98\\\hline
+80 & 1.00\\\hline
+85 & 1.00\\\hline
+90 & 1.00\\\hline
+95 & 1.00\\\hline
+100 & 1.00\\\hline
+\end{array}$$
+
+\newpage
+
+\item If you extrapolate linearly from small values of $M$, at what value of $M$ will saturation $\bar{x} = 1$ occur?
+
+{\bf Solution:} Examining the following table, we see that saturation occurs at $M = 80$.
+
+$\begin{array}{|c|c|}\hline
+M & \bar{x}\\\hline\hline
+20 & 0.29\\\hline
+21 & 0.31\\\hline
+22 & 0.32\\\hline
+23 & 0.34\\\hline
+24 & 0.35\\\hline
+25 & 0.37\\\hline
+26 & 0.38\\\hline
+27 & 0.40\\\hline
+28 & 0.41\\\hline
+29 & 0.43\\\hline
+30 & 0.44\\\hline
+31 & 0.45\\\hline
+32 & 0.47\\\hline
+33 & 0.48\\\hline
+\end{array}\;\;\;
+\begin{array}{|c|c|}\hline
+M & \bar{x}\\\hline\hline
+34 & 0.50\\\hline
+35 & 0.51\\\hline
+36 & 0.53\\\hline
+37 & 0.54\\\hline
+38 & 0.56\\\hline
+39 & 0.57\\\hline
+40 & 0.58\\\hline
+41 & 0.60\\\hline
+42 & 0.61\\\hline
+43 & 0.63\\\hline
+44 & 0.64\\\hline
+45 & 0.66\\\hline
+46 & 0.67\\\hline
+47 & 0.68\\\hline
+\end{array}\;\;\;
+\begin{array}{|c|c|}\hline
+M & \bar{x}\\\hline\hline
+48 & 0.70\\\hline
+49 & 0.71\\\hline
+50 & 0.72\\\hline
+51 & 0.74\\\hline
+52 & 0.75\\\hline
+53 & 0.77\\\hline
+54 & 0.78\\\hline
+55 & 0.79\\\hline
+56 & 0.80\\\hline
+57 & 0.82\\\hline
+58 & 0.83\\\hline
+59 & 0.84\\\hline
+60 & 0.86\\\hline
+61 & 0.87\\\hline
+\end{array}\;\;\;
+\begin{array}{|c|c|}\hline
+M & \bar{x}\\\hline\hline
+62 & 0.88\\\hline
+63 & 0.89\\\hline
+64 & 0.90\\\hline
+65 & 0.91\\\hline
+66 & 0.92\\\hline
+67 & 0.93\\\hline
+68 & 0.94\\\hline
+69 & 0.95\\\hline
+70 & 0.96\\\hline
+71 & 0.96\\\hline
+72 & 0.97\\\hline
+73 & 0.98\\\hline
+74 & 0.98\\\hline
+75 & 0.98\\\hline
+\end{array}\;\;\;
+\begin{array}{|c|c|}\hline
+M & \bar{x}\\\hline\hline
+76 & 0.99\\\hline
+77 & 0.99\\\hline
+78 & 0.99\\\hline
+79 & 0.99\\\hline
+80 & 1.00\\\hline
+81 & 1.00\\\hline
+82 & 1.00\\\hline
+83 & 1.00\\\hline
+84 & 1.00\\\hline
+85 & 1.00\\\hline
+86 & 1.00\\\hline
+87 & 1.00\\\hline
+88 & 1.00\\\hline
+89 & 1.00\\\hline
+\end{array}\;\;\;
+\begin{array}{|c|c|}\hline
+M & \bar{x}\\\hline\hline
+90 & 1.00\\\hline
+91 & 1.00\\\hline
+92 & 1.00\\\hline
+93 & 1.00\\\hline
+94 & 1.00\\\hline
+95 & 1.00\\\hline
+96 & 1.00\\\hline
+97 & 1.00\\\hline
+98 & 1.00\\\hline
+99 & 1.00\\\hline
+100 & 1.00\\\hline
+\end{array}$
+
+\item Can you provide an empirical argument or equation to justify this value?
+
+{\bf Solution:} There are several empirical arguments that justify 80 as the saturation value.  First, a cursory examination of Figure 3.3.9 shows that the line $M-\bar{l}$ levels off around 80, and so there are a constant number of operational machines at any time for any $M \ge 80$.  This is because, as we increase the number of machines without increasing the number of servers, more machines will fail and thus the server will be busier and busier until every machine is delayed.  An equation for the fuction $f: M \to M-\bar{l}$ given by $M-\bar{l} = 67$ gives the maximum number of operational machines for any $M\ge 80$.  Since this function is a flat line, the number of operational machines does not increase with $M$ and so saturation will be 1 after 80.
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

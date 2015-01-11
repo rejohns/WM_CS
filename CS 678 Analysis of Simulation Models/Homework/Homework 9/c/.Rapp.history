@@ -1,0 +1,250 @@
+for (i in 1:nrep)
+{if (1 - pnorm(32, u(i), 10) < .98) {}}
+{if (1 - pnorm(32, u(i), 10) < .98) {i}}
+1 - pnorm(32, u(1), 10)
+u(1)
+u(2)
+u(1)
+for(i in 1:nrep) {if(1 - pnorm(32, u(i), 10) < .98) {print(i)}}
+u(1)
+u(3)
+for(i in 1:nrep) {if(1 - pnorm(32, u(i), 10) > .98) {print(i)}}
+1 - pnorm(32, u(77), 10)
+1 - pnorm(32, u(76), 10)
+source("/Users/Robert/Desktop/pm16.txt")
+count/nrep
+a
+a = matrix(c(-1, 1, -1, 1),2,2)
+a
+a = matrix(c(-1, -1, 1, 1),2,2)
+a
+source("/Users/Robert/Desktop/pm16.txt")
+count/nrep
+source("/Users/Robert/Desktop/pm16.txt")
+f(.24036)
+f(.24037)
+f(.240364)
+dhyper(4, 50, 50, 10) + dhyper(5, 50, 50, 10) + dhyper(6, 50, 50, 10)
+dbinom(4, 10, .5) + dbinom(5, 10, .5) + dbinom(6, 10, .5)
+dpois(3, 3)
+dpois(4, 5) + dpois(5, 5) + dpois(6, 5)
+5+7
+pnorm(6.5, 5, 2.5) - pnorm(3.5, 5, 2.5)
+sqrt(4)
+pnorm(6.5, 5, sqrt(2.5)) - pnorm(3.5, 5, sqrt(2.5))
+dpois(49, 50) + dpois(50, 50) + dpois(51, 50)
+dpois(4, 5) + dpois(5, 5) + dpois(6, 5)
+ppois(6, 5) - ppois(4,5)
+ppois(6, 5) - ppois(3,5)
+source("/Users/Robert/Desktop/pm16.txt")
+source("/Users/Robert/Desktop/pm12.txt")
+nrep = 100000
+x = rbinom(nrep, 10, .5)
+y = sum(abs(x - 4))/nrep
+y
+y = sum(abs(x - 5))/nrep
+y
+sum(dpois(4:6, 1/5))
+sum(dpois(4:6, 5))
+b1 = 2
+b2 = 3
+b = matrix(c(b1,b2), 2, 1)
+b
+m1 = -1
+m2 = -2
+a = matrix(c(-m1, -m2, 1, 1), 2, 2)
+a
+s = solve(a,b)
+s
+s[1,1] = s[1,1] + 1
+s
+source("/Users/Robert/Desktop/pm16.txt")
+source("/Users/Robert/Desktop/pm15.txt")
+source("/Users/Robert/Desktop/huh.txt")
+for i in(1:7):
+source("/Users/Robert/Desktop/run.R")
+source("/Users/Robert/Desktop/asm4a.r")
+source("/Users/Robert/Desktop/asm4n.r")
+source("/Users/Robert/Desktop/asm4b.r")
+rcauchy(10)
+source("/Users/Robert/Desktop/asm4b.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 2/asm4a.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 2/asm4b.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 2/asm4c.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 3/c/asm3c.r")
+getwd()
+setwd(../Robert)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 3/c/asm3c.r")
+setwd("./documents/'personal documents'/'school words'/college/senior/spring/'analysis of simulation models'/homework/'homework 3'/c")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 3/c/asm3c.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 3/c/asm3d.r")
+x = c(2.7, .4, 6.8, .5, .1, 1.8)
+ecdf(x)
+y.ecdf = ecdf(x)
+y
+plot(y.ecdf)
+x
+sort(x)
+x= sort(x)
+y = c(1/6, 2/6, 3/6, 4/6, 5/6, 1)
+points(x,y)
+plot(x,y)
+plot(x,y, type = "o")
+mean(x)
+var(x)
+library(e1071)
+skewness(x)
+cv(x)
+sqrt(var(x))/mean(x)
+exp(x)
+mean(((x - mean(x))/sqrt(var(x)))^3)
+mean(((x - mean(x))/sqrt(var(x)))^4)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 4/c/asm3e.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 4/c/asm3f.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 4/c/asm3h.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 4/c/asm5.r")
+qchisq(1-.05/2, 12)
+qchisq(.05/2, 12)
+setwd(./documents)
+setwd(/documents)
+setwd(documents)
+getwd()
+setwd(/Users/Robert/documents)
+setwd(Users/Robert/documents)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 5/c/asm5c.r")
+help(acf)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 5/c/asm5c.r")
+acf(ldeaths)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 5/c/asm5c.r")
+y = scan("tmp.txt")
+acf(y, lag.max = NULL, plot = FALSE)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 5/c/asm5d.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm5a.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm5b.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm5b.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm6c.r")
+log(e)
+log(exp(1))
+-1*((4^3)*log(.5^(1/789)))^(1/3)
+log(.5^(1/789)))
+log(.5^(1/789))
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm6c.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm6d.r")
+b = 4
+x = -b
+x
+-b*log(3)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm6d.r")
+x
+log((1 - runif(200))^(1/n))
+(log((1 - runif(200))^(1/n)))^(1/3)
+(log((1 - runif(200))^(1/789)))^(1/3)
+(log((1 - runif(200))^(1/789)))
+a = -1
+a^(1/3)
+-(-a)^(1/3)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm6d.r")
+print(x)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm6d.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm6c.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 6/c/asm6d.r")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+help lines
+help(lines)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+u
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+help(while)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+traceback()
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+u
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+v
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+y
+v
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7b.r")
+max
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 7/c/asm7e.r")
+help ts
+help(ts)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9a.R")
+help(acf)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+mean = mean(data)
+mean
+data
+var = var(data)
+var
+mean(data)
+help(acf)
+acf(data)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+acf(data)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+r1
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+mean
+mean1
+mean2
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+help(function)
+help(function())
+help(func)
+help(function)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+help(sum)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+womp = c(1,2,3,4,5,6,7)
+wom[1:4]
+womp[1:4]
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+help(aggregate)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9c.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9c.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9c.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9c.R")
+corr
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9c.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9c.R")
+help(aggregate)
+help(aggregate)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9c.R")
+aggregate(datats)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9c.R")
+aggregate(datadtats, mean)
+aggregate(datastats, mean)
+aggregate(datats, mean)
+aggregate(datats, mean)
+616/12
+data = scan("data.txt")
+data = td(data, start = c(1992, 1), frequency = 12)
+data = ts(data, start = c(1992, 1), frequency = 12)
+hstart
+data
+aggregate(data, 4, mean)
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+source("/Users/Robert/Documents/Personal Documents/School Words/College/Senior/Spring/Analysis of Simulation Models/Homework/Homework 9/c/asm9b.R")
+newData
