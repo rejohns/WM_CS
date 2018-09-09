@@ -1,2 +1,0 @@
-"all	sorts of
-whitespace"
