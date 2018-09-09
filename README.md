@@ -1,5 +1,5 @@
 # WM_CS
-Test upload of select William &amp; Mary computer science coursework
+Select work for William &amp; Mary computer science courses
 
 ## Spring 2012
 
