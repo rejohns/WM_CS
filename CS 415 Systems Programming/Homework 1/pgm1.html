@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0066)http://www.cs.wm.edu/~kearns/415S14/assignments/p1/pgm1/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>pgm1</title>
+<meta name="description" content="pgm1">
+<meta name="keywords" content="pgm1">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="http://www.cs.wm.edu/~kearns/415S14/assignments/p1/pgm1/pgm1.css">
+
+<style type="text/css"></style></head>
+
+<body>
+<div align="CENTER">
+<font size="+3"><b>CSCI415--Systems Programming</b></font> 
+<br> 
+<br><font size="+3">Spring 2014</font> 
+<br> 
+<br><font size="+3">Programming Assignment 1</font> 
+<br>
+</div>
+<h1><a name="SECTION00010000000000000000">
+The Drunk Beetle and the Boiling Oil</a>
+</h1>
+This assignment requires that you design and implement a small C program.
+It's primary purpose is simply to reacquaint you with C programming on a Linux system.
+
+<p>
+
+</p><p>
+<br>
+A single intoxicated beetle is placed in the exact center of a
+cardboard square that is suspended over a large vat of
+boiling oil. The beetle, being quite drunk, behaves rather
+erratically. It moves exactly 1 inch (in 1 second) in a straight line
+in a randomly chosen direction. It then passes out for exactly 1
+second. When it wakes, it again picks a random direction and moves 1
+inch. We are interested in selling insurance to drunk beetles on
+squares suspended above vats of boiling oil, so we want to compute the
+average time that a drunk beetle will live after it starts to move for
+the first time. Clearly, the way to get a handle on this average is to
+measure the time it takes for a beetle to get boiled for lots of
+beetles, and to compute the average over the sample. To make the
+problem a bit easier, assume that the last movement by the beetle
+lasts a full second. That is, don't worry about taking into account
+the fact that the last movement of the beetle will neither be a full
+inch nor a full second.
+
+</p><p>
+
+</p><p>
+<br>
+You should check out the manual pages for:
+
+</p><ul>
+<li><tt>random()</tt>, the ``better'' random number generator on our
+      system,
+</li>
+<li><tt>sin()</tt>, <tt>cos()</tt>, etc., the trigonometric functions,
+</li>
+<li><tt>printf()</tt>, the formatted output facility (especially the
+      material about formatted output of floating point numbers), and
+</li>
+<li><tt>atoi()</tt>, and related functions that convert strings into numeric quantities.
+</li>
+</ul>
+
+<p>
+
+</p><p>
+<br>
+Note that the trig functions are part of the mathematics library on
+our systems. This means you have to tell the linker to search that
+library explicitly. If your source program is called beetle.c, and you
+want an executable called beetle, do the following:
+</p><dl compact="">
+<dt></dt>
+<dd><tt>gcc -Wall -o beetle beetle.c -lm</tt>
+</dd>
+</dl>
+
+<p>
+
+</p><p>
+<br>
+A final requirement: your program should be parametric in that two
+command line argument control your simulation:
+
+</p><ul>
+<li>The first argument is a positive nonzero integer which specifies the length
+of one side of the square in inches. This integer must not underflow nor overflow the machine representation of a long integer (you must enforce this).
+</li>
+<li>The second argument is a positive nonzero integer which specifies how many
+beetles are boiled in order to get the average lifetime. This integer must not underflow nor overflow the machine representation of a long integer (again, you must enforce this).
+</li>
+</ul>
+For example, if your binary is called <tt>beetle</tt>, the command line
+<dl compact="">
+<dt></dt>
+<dd><tt>./beetle 20 10000</tt>
+</dd>
+</dl>
+will simulate the actions of 10000 beetles on a 20" by 20" square
+in order to compute mean beetle lifetime.
+
+<p>
+
+</p><p>
+<br>
+Make sure that your program exits gracefully with an error
+message for ``bad'' command line arguments.  Argument checking is a significant component of this assignment (and the course).
+
+</p><h1><a name="SECTION00020000000000000000">
+Submission</a>
+</h1>
+I will post the details of project submission shortly, but you
+will be required to submit your source, which the TA will compile and
+execute on a Linux system in the departmental lab in 121 McGlothlin-Street Hall.
+Bear this in mind if you do your development on another platform.
+
+<p>
+
+</p><p>
+<br>
+Your output for a run should appear exactly like the following line:
+</p><dl compact="">
+<dt></dt>
+<dd><tt>X by X square, Y beetles, mean beetle lifetime is Z.Z</tt>
+</dd>
+</dl>
+where <tt>X</tt> and <tt>Y</tt> are integers and <tt>Z.Z</tt> is a
+real (show only a single digit to the right of the decimal point).  A concrete
+example:
+<pre>% ./beetle 10 10000
+10 by 10 square, 10000 beetles, mean beetle lifetime is 67.0
+%
+</pre>
+<h1><a name="SECTION00030000000000000000">
+Due</a>
+</h1>
+Monday, January 27, at 11:59pm.
+
+<h1><a name="SECTION00040000000000000000">
+About this document ...</a>
+</h1>
+ <p>
+This document was generated using the
+<a href="http://www.latex2html.org/"><strong>LaTeX</strong>2<tt>HTML</tt></a> translator Version 2008 (1.71)
+</p><p>
+Copyright © 1993, 1994, 1995, 1996,
+<a href="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</a>, 
+Computer Based Learning Unit, University of Leeds.
+<br>
+Copyright © 1997, 1998, 1999,
+<a href="http://www.maths.mq.edu.au/~ross/">Ross Moore</a>, 
+Mathematics Department, Macquarie University, Sydney.
+</p><p>
+The command line arguments were: <br>
+ <strong>latex2html</strong> <tt>-nonavigation -split 0 -image_type gif -transparent -white pgm1.tex</tt>
+</p><p>
+The translation was initiated by Phil Kearns on 2014-01-20
+<br></p><hr>
+<address>
+Phil Kearns
+2014-01-20
+</address>
+
+
+</body></html>
