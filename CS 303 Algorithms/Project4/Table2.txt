@@ -1,0 +1,40 @@
+-----------------------------------------------------------------------------
+Selection algorithm                      k = 1       k is the       k = n
+                                                     median
+=============================================================================
+sort select                              1.04        1.04           1.03
+
+-----------------------------------------------------------------------------
+partial sort select                      0.04        N/A            1.05
+
+-----------------------------------------------------------------------------
+minimum binary heap select               0.12        2.39           4.31
+
+-----------------------------------------------------------------------------
+partial maximum binary heap select       0.09        1.51           2.13
+
+-----------------------------------------------------------------------------
+quickselect (with median-of-three        0.1         0.15           0.09     
+rule for choosing the pivot)
+-----------------------------------------------------------------------------
+linear select (with median-of-median     0.09        0.16           0.1
+of-five rule for choosing the pivot)
+-----------------------------------------------------------------------------
+
+Table 2.  Timing results for the selection algorithms with n = 10000000.
+
+
+Single run
+
+bg3
+
+g++ -Wall -O group.cc rng.c timing.c test.cc -o test
+./test
+
+When k is the median, partial_sort_select will take forever if n = 1-,000,000.
+This is because after sorting, there are two nested for loops that examine every
+element on both sides of k.  If k is at the edges, this will have a linear time
+complexity because one for loop will examine very few elements, while the other
+will examine effectively the whole array, giving a time complexity of n * 1 = n.
+But if k is in the middle, both for loops will examine roughly half the elements
+in the array, giving a time complexity of (n/2) * (n/2) = (n^2)/4, which is bad.

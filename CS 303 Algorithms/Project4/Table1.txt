@@ -1,0 +1,36 @@
+-----------------------------------------------------------------------------
+Sorting method              randomly     sorted       sorted       identical
+(including pivot            generated    in order     in reverse   elements
+rules for quicksort)
+=============================================================================
+insertion sort              15.36       0.0           30.98        0.0    
+
+-----------------------------------------------------------------------------
+heapsort                    0.04        0.02          0.02         0.0
+
+-----------------------------------------------------------------------------
+mergesort                   0.03        0.01          0.01         0.01
+
+-----------------------------------------------------------------------------
+quicksort with pivot rule:  0.02        0.0           0.01         0.0
+choose median of 3
+-----------------------------------------------------------------------------
+quicksort with pivot rule:  0.02        28.29         24.54        0.01
+choose first element
+-----------------------------------------------------------------------------
+quicksort with pivot rule:  0.02        0.0           0.01         0.01
+choose middle element
+-----------------------------------------------------------------------------
+quicksort with pivot rule:  0.03        21.2          24.62        0.01
+choose last element
+-----------------------------------------------------------------------------
+
+Table 1.  Timing results for the sorting algorithms with n = 250000.
+
+
+Single run
+
+bg3
+
+g++ -Wall -O group.cc test.cc timing.c rng.c -o test
+./test

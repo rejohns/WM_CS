@@ -1,0 +1,43 @@
+-----------------------------------------------------------------------------
+Sorting method              randomly     sorted       sorted       identical
+(including pivot            generated    in order     in reverse   elements
+rules for quicksort)
+=============================================================================
+insertion sort
+
+-----------------------------------------------------------------------------
+heapsort
+
+-----------------------------------------------------------------------------
+mergesort
+
+-----------------------------------------------------------------------------
+quicksort with pivot rule:
+choose median of 3
+-----------------------------------------------------------------------------
+quicksort with pivot rule:
+choose first element
+-----------------------------------------------------------------------------
+quicksort with pivot rule:
+choose middle element
+-----------------------------------------------------------------------------
+quicksort with pivot rule:
+choose last element
+-----------------------------------------------------------------------------
+
+Table 1.  Timing results for the sorting algorithms with n = 250000.
+
+
+[Replace this first block with a statement indicating whether the
+results you are reporting are from a single run or the average over
+multiple runs.  If the times are averaged over multiple runs, indicate
+the number of runs.]
+
+[Replace this second block with the name of the machine in the CS
+system on which you ran your timing tests (e.g., bg1 or ...).  If your
+tests were run on a machine not on the CS network, say so and indicate
+the features of the machine upon which your tests were run.]
+
+[Replace this third block with the list of options you used to compile
+and create the executable used to run your timing tests.  In
+particular, it is useful to know if you used compiler optimizations.]
