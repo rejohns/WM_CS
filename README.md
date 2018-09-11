@@ -11,6 +11,14 @@ From the W&M course catalogue:
 
 ## Fall 2012
 
+**CS 303: Algorithms**: Traditional fundamental algorithms course, covering multiple paradigms and time-complexity analysis. 
+
+*Grade received: A-*
+
+From the W&M course catalogue:
+
+>A systematic study of algorithms and their complexity, including searching, sorting, selecting, and algorithms for graphs. A survey of algorithm design methods, including greedy algorithms, divide-and-conquer, dynamic programming, and backtracking. An introduction to NP-complete problems. 
+
 **CS 321 (now 421): Database Systems**: Introduction to relational database design and SQL. Code for semester-project, a baseball statistics database, included.
 
 *Grade received: A*
